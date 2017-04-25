@@ -8,9 +8,12 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "hunteraccount")
+@Table(name = "hunter_account")
 public class HunterAccount {
 
+    /*
+    主键生成策略
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -26,6 +29,10 @@ public class HunterAccount {
 
 
     public HunterAccount() { }
+
+    public HunterAccount(int id){
+        this.id = id;
+    }
 
     public HunterAccount(int id, String hunterAccount, String password, String headImage, String name, String tokenKey) {
         this.id = id;

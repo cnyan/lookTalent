@@ -3,6 +3,7 @@ package com.yan.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.yan.entity.HunterAccount;
 import com.yan.repository.HunterAccountRepository;
+import com.yan.utils.CheckSumBuilder;
 import com.yan.utils.GetNIMTokeKey;
 import com.yan.utils.ResultMsg;
 import com.yan.utils.ResultStatusCode;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.zip.Checksum;
 
 /**
  * Created by 闫继龙 on 2017/4/22.
@@ -42,8 +45,10 @@ public class HunterAccountController {
                 return resultMsg;
              }
 
-            //解析返回正确结果
+            //返回网易token_key结果，hunterAccount设置token_key
             hunterAccount.setTokenKey(object.getJSONObject("info").get("token").toString());
+            //hunterAccount的密码进行md5 加密
+            hunterAccount.setPassword(CheckSumBuilder.getMD5(hunterAccount.getPassword()));
             //执行保存
             hunterAccountRepository.save(hunterAccount);
             resultMsg = new ResultMsg(ResultStatusCode.NIM_TOKENKEY_GET_SUCCESS.getErrcode(), ResultStatusCode.NIM_TOKENKEY_GET_SUCCESS.getErrmsg(),null);
@@ -53,5 +58,7 @@ public class HunterAccountController {
 
         return resultMsg;
     }
+
+
 
 }
