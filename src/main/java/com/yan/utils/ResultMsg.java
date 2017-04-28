@@ -17,9 +17,9 @@ public class ResultMsg {
 
 
     public ResultMsg(String code, String message, Object content) {
-        Code = code;
-        Message = message;
-        Content = content;
+        this.Code = code;
+        this.Message = message;
+        this.Content = content;
     }
 
     public String getCode() {
@@ -44,5 +44,14 @@ public class ResultMsg {
 
     public void setContent(Object content) {
         Content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "ResultMsg{" +
+                "Code='" + Code + '\'' +
+                ", Message='" + Message + '\'' +
+                ", Content=" + Content +
+                '}';
     }
 }

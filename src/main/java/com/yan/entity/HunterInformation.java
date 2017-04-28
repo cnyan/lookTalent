@@ -26,12 +26,12 @@ public class HunterInformation implements Serializable {
     private String gender;
     //邮箱
     private String email;
-    //求职意向
+    //求职意向(java\web\ios\.net)
     private String jobIntension;
-    //工作性质
+    //工作性质(全职、兼职）
     private String jobNature ;
     //求职宣言
-    private String jobDeclarations;
+    private String declarations;
 
     @OneToOne
     private HunterResume hunterResume;
@@ -39,7 +39,7 @@ public class HunterInformation implements Serializable {
     public HunterInformation() {
     }
 
-    public HunterInformation(String resumeImage, String name, String age, String gender, String email, String jobIntension, String jobNature, String jobDeclarations, HunterResume hunterResume) {
+    public HunterInformation(String resumeImage, String name, String age, String gender, String email, String jobIntension, String jobNature, String declarations, HunterResume hunterResume) {
         this.resumeImage = resumeImage;
         this.name = name;
         this.age = age;
@@ -47,7 +47,7 @@ public class HunterInformation implements Serializable {
         this.email = email;
         this.jobIntension = jobIntension;
         this.jobNature = jobNature;
-        this.jobDeclarations = jobDeclarations;
+        this.declarations = declarations;
         this.hunterResume = hunterResume;
     }
 
@@ -115,12 +115,12 @@ public class HunterInformation implements Serializable {
         this.jobNature = jobNature;
     }
 
-    public String getJobDeclarations() {
-        return jobDeclarations;
+    public String getDeclarations() {
+        return declarations;
     }
 
-    public void setJobDeclarations(String jobDeclarations) {
-        this.jobDeclarations = jobDeclarations;
+    public void setDeclarations(String declarations) {
+        this.declarations = declarations;
     }
 
     public HunterResume getHunterResume() {
@@ -138,11 +138,11 @@ public class HunterInformation implements Serializable {
                 ", resumeImage='" + resumeImage + '\'' +
                 ", name='" + name + '\'' +
                 ", age='" + age + '\'' +
-                ", gender=" + gender +
+                ", gender='" + gender + '\'' +
                 ", email='" + email + '\'' +
                 ", jobIntension='" + jobIntension + '\'' +
                 ", jobNature='" + jobNature + '\'' +
-                ", jobDeclarations='" + jobDeclarations + '\'' +
+                ", declarations='" + declarations + '\'' +
                 ", hunterResume=" + hunterResume +
                 '}';
     }

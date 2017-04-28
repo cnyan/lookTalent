@@ -5,12 +5,12 @@ import com.yan.repository.HunterCreateCapacityDescRepository;
 import com.yan.repository.HunterCreateEducationRepository;
 import com.yan.repository.HunterCreateInformRepository;
 import com.yan.repository.HunterCreateResumeRepository;
+import com.yan.utils.PageSizeUtil;
 import com.yan.utils.ResultMsg;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.PostRemove;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,10 +33,11 @@ public class HunterCreateResumeController {
     private HunterCreateCapacityDescRepository hunterCreateCapacityDescRepository;
 
     @RequestMapping("create")
-    public ResultMsg createResum(@RequestBody HunterResume hunterResume){
-        HunterResume hunterResume1 = new HunterResume();
-        hunterResume1.setHunterAccountID(hunterResume.getHunterAccountID());
-        HunterResume  result = hunterCreateResumeRepository.save(hunterResume1);
+    public ResultMsg createResume(@RequestBody HunterResume hunterResume){
+        //先创建一个简历（null)
+        HunterResume resume = new HunterResume();
+        resume.setHunterAccountID(hunterResume.getHunterAccountID());
+        HunterResume  result = hunterCreateResumeRepository.save(resume);
 
         //保存能力描述
         List<HunterCapacityDesc> hunterCapacityDescs = new ArrayList<>();
@@ -51,17 +52,31 @@ public class HunterCreateResumeController {
         }
 
         //保存个人信息
-        HunterInformation i = hunterCreateInformRepository.save(hunterResume.getHunterInformation());
+        HunterInformation information = hunterCreateInformRepository.save(hunterResume.getHunterInformation());
+
+        //构建简历
         result.setHunterCapacityDescList(hunterCapacityDescs);
         result.setHunterEducation(hunterEducations);
-        result.setHunterInformation(i);
+        result.setHunterInformation(information);
 
-        ResultMsg resultMsg = new ResultMsg("200","succeess",hunterCreateResumeRepository.save(result));
+        //保存个人简历
+        hunterCreateResumeRepository.save(result);
+
+        ResultMsg resultMsg = new ResultMsg("200","succeess",null);
         return resultMsg;
     }
 
+    //根据求职者ID ，查看求职者简历信息(列表）
     @RequestMapping("find")
     public ResultMsg findHunterResumeWithHunterAccountId(@RequestBody HunterAccount hunterAccount){
         return  new ResultMsg("200","succeess", hunterCreateResumeRepository.findByHunterAccountID(hunterAccount.getId()));
     }
+
+    //查看全部的简历
+    @PostMapping("query/{pageIndex}/{pageSize}")
+    public ResultMsg queryAllHunterResum(@PathVariable  int pageIndex,@PathVariable  int pageSize){
+        return new ResultMsg("200","success",hunterCreateResumeRepository.queryHunterResumesByPageIndex(pageIndex,pageSize));
+    }
+
+
 }

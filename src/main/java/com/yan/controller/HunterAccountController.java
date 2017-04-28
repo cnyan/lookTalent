@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.yan.entity.HunterAccount;
 import com.yan.repository.HunterAccountRepository;
 import com.yan.utils.CheckSumBuilder;
-import com.yan.utils.GetNIMTokeKey;
+import com.yan.utils.GetNIMTokenKey;
 import com.yan.utils.ResultMsg;
 import com.yan.utils.ResultStatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.zip.Checksum;
 
 /**
  * Created by 闫继龙 on 2017/4/22.
@@ -38,13 +36,13 @@ public class HunterAccountController {
         ResultMsg resultMsg = new ResultMsg() ;
 
         try {
-            JSONObject object = GetNIMTokeKey.getTokenKey(hunterAccount.getHunterAccount());
+            JSONObject object = GetNIMTokenKey.getTokenKey(hunterAccount.getHunterAccount(),hunterAccount.getName());
             if(!object.get("code").toString().equals("200")){
                 //返回结果错误，返回错误信息与状态码
                 resultMsg = new ResultMsg(object.get("code").toString(),object.get("desc").toString(),null);
                 return resultMsg;
              }
-
+            System.out.println("网易云信注册结果："+object);
             //返回网易token_key结果，hunterAccount设置token_key
             hunterAccount.setTokenKey(object.getJSONObject("info").get("token").toString());
             //hunterAccount的密码进行md5 加密
