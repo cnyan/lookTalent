@@ -26,19 +26,16 @@ public class HunterEducation {
     //学历
     private String qualifications;
 
-    @ManyToOne
-    private HunterResume hunterResume;
 
     public HunterEducation() {
     }
 
-    public HunterEducation(String startTime, String endTime, String schoolName, String professional, String qualifications, HunterResume hunterResume) {
+    public HunterEducation(String startTime, String endTime, String schoolName, String professional, String qualifications) {
         this.startTime = startTime;
         this.endTime = endTime;
         this.schoolName = schoolName;
         this.professional = professional;
         this.qualifications = qualifications;
-        this.hunterResume = hunterResume;
     }
 
     public int getId() {
@@ -89,14 +86,6 @@ public class HunterEducation {
         this.qualifications = qualifications;
     }
 
-    public HunterResume getHunterResume() {
-        return hunterResume;
-    }
-
-    public void setHunterResume(HunterResume hunterResume) {
-        this.hunterResume = hunterResume;
-    }
-
     @Override
     public String toString() {
         return "HunterEducation{" +
@@ -106,7 +95,6 @@ public class HunterEducation {
                 ", schoolName='" + schoolName + '\'' +
                 ", professional='" + professional + '\'' +
                 ", qualifications='" + qualifications + '\'' +
-                ", hunterResume=" + hunterResume +
                 '}';
     }
 }

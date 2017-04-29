@@ -19,15 +19,12 @@ public class HunterCapacityDesc implements Serializable{
 
     private String capacityDesc;
 
-    @ManyToOne
-    private HunterResume hunterResume;
 
     public HunterCapacityDesc() {
     }
 
-    public HunterCapacityDesc(String capacityDesc, HunterResume hunterResume) {
+    public HunterCapacityDesc(String capacityDesc) {
         this.capacityDesc = capacityDesc;
-        this.hunterResume = hunterResume;
     }
 
     public int getId() {
@@ -46,20 +43,11 @@ public class HunterCapacityDesc implements Serializable{
         this.capacityDesc = capacityDesc;
     }
 
-    public HunterResume getHunterResume() {
-        return hunterResume;
-    }
-
-    public void setHunterResume(HunterResume hunterResume) {
-        this.hunterResume = hunterResume;
-    }
-
     @Override
     public String toString() {
         return "HunterCapacityDesc{" +
                 "id=" + id +
                 ", capacityDesc='" + capacityDesc + '\'' +
-                ", hunterResume=" + hunterResume +
                 '}';
     }
 }

@@ -1,9 +1,7 @@
 package com.yan.controller;
 
-import com.yan.entity.RecruiterCompanyInfo;
-import com.yan.entity.RecruiterInformation;
-import com.yan.entity.RecruiterPosition;
-import com.yan.entity.RecruiterPositionDesc;
+import com.alibaba.fastjson.JSONObject;
+import com.yan.entity.*;
 import com.yan.repository.RecruiterCreateCompanyInfoRepository;
 import com.yan.repository.RecruiterCreateInformRepository;
 import com.yan.repository.RecruiterCreatePositionDescRepository;
@@ -34,7 +32,11 @@ public class RecruiterCreatePositionController {
     @Autowired
     private RecruiterCreatePositionDescRepository createPositionDescRepository;
 
-
+    /**
+     * 创建职位
+     * @param recruiterPosition
+     * @return
+     */
     @RequestMapping("create")
     public ResultMsg createPosition(@RequestBody RecruiterPosition recruiterPosition){
 
@@ -66,9 +68,36 @@ public class RecruiterCreatePositionController {
         return new ResultMsg("200","success",null);
     }
 
-
-    @RequestMapping("query")
+    /**
+     * 查看全部职位
+     * @return List<position>
+     */
+    @RequestMapping("queryall")
     public ResultMsg queryAllPosition(){
         return new ResultMsg("200","success",createPositionRepository.findAll());
     }
+
+    /**
+     * 根据招聘者ID，查看职位《列表》
+     * @param recruiterAccount
+     * @return
+     */
+    @RequestMapping("find")
+    public ResultMsg findPositionByRecruiterAccountID(@RequestBody RecruiterAccount recruiterAccount) {
+        return new ResultMsg("200", "succeess",createPositionRepository.findPositionByRecruiterAccountID(recruiterAccount.getId()));
+    }
+
+    /**
+     * 分页获取职位列表
+     * @param jsonObject
+     * @return
+     */
+    @RequestMapping("querypage")
+    public ResultMsg queryRecruiterPositionsByPageIndex(@RequestBody JSONObject jsonObject) {
+        int pageIndex =  Integer.parseInt(jsonObject.get("pageIndex").toString());
+        int pageSize =  Integer.parseInt(jsonObject.get("pageSize").toString());
+        System.out.println("pageIndex:" + jsonObject.get("pageIndex") + ",pageSize:" +jsonObject.get("pageSize"));
+        return new ResultMsg("200", "success", createPositionRepository.queryRecruiterPositionsByPageIndex(pageIndex, pageSize));
+    }
+
 }

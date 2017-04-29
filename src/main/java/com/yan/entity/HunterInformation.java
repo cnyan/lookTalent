@@ -33,13 +33,12 @@ public class HunterInformation implements Serializable {
     //求职宣言
     private String declarations;
 
-    @OneToOne
-    private HunterResume hunterResume;
+
 
     public HunterInformation() {
     }
 
-    public HunterInformation(String resumeImage, String name, String age, String gender, String email, String jobIntension, String jobNature, String declarations, HunterResume hunterResume) {
+    public HunterInformation(String resumeImage, String name, String age, String gender, String email, String jobIntension, String jobNature, String declarations) {
         this.resumeImage = resumeImage;
         this.name = name;
         this.age = age;
@@ -48,7 +47,6 @@ public class HunterInformation implements Serializable {
         this.jobIntension = jobIntension;
         this.jobNature = jobNature;
         this.declarations = declarations;
-        this.hunterResume = hunterResume;
     }
 
     public int getId() {
@@ -123,14 +121,6 @@ public class HunterInformation implements Serializable {
         this.declarations = declarations;
     }
 
-    public HunterResume getHunterResume() {
-        return hunterResume;
-    }
-
-    public void setHunterResume(HunterResume hunterResume) {
-        this.hunterResume = hunterResume;
-    }
-
     @Override
     public String toString() {
         return "HunterInformation{" +
@@ -143,7 +133,6 @@ public class HunterInformation implements Serializable {
                 ", jobIntension='" + jobIntension + '\'' +
                 ", jobNature='" + jobNature + '\'' +
                 ", declarations='" + declarations + '\'' +
-                ", hunterResume=" + hunterResume +
                 '}';
     }
 }
