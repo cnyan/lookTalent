@@ -15,7 +15,8 @@ public enum ResultStatusCode {
 //    NOT_FIND_RESULT(30009,"Find result is empty"),//查询结果为空
 
     //网易云信 状态码200、403、414、416、431、500
-    NIM_TOKENKEY_GET_SUCCESS("200","regist success")
+    NIM_TOKENKEY_GET_SUCCESS("200","regist success"),
+    ERROR_ACCOUNT("4004","User name or password is incorrect")//用户名或密码不正确
     ;
 
     private String errcode;

@@ -34,11 +34,12 @@ public class RecruiterCreatePositionController {
 
     /**
      * 创建职位
+     *
      * @param recruiterPosition
      * @return
      */
     @RequestMapping("create")
-    public ResultMsg createPosition(@RequestBody RecruiterPosition recruiterPosition){
+    public ResultMsg createPosition(@RequestBody RecruiterPosition recruiterPosition) {
 
         //先创建一个职位
         RecruiterPosition position = new RecruiterPosition();
@@ -53,7 +54,7 @@ public class RecruiterCreatePositionController {
 
         //保存职位描述
         List<RecruiterPositionDesc> recruiterPositionDescs = new ArrayList<>();
-        for (RecruiterPositionDesc desc:recruiterPosition.getRecruiterPositionDescs()) {
+        for (RecruiterPositionDesc desc : recruiterPosition.getRecruiterPositionDescs()) {
             recruiterPositionDescs.add(createPositionDescRepository.save(desc));
         }
 
@@ -65,38 +66,65 @@ public class RecruiterCreatePositionController {
         //保存职位
         createPositionRepository.save(position);
 
-        return new ResultMsg("200","success",null);
+        return new ResultMsg("200", "success", null);
     }
 
     /**
      * 查看全部职位
+     *
      * @return List<position>
      */
     @RequestMapping("queryall")
-    public ResultMsg queryAllPosition(){
-        return new ResultMsg("200","success",createPositionRepository.findAll());
+    public ResultMsg queryAllPosition() {
+        return new ResultMsg("200", "success", createPositionRepository.findAll());
     }
 
     /**
      * 根据招聘者ID，查看职位《列表》
+     *
      * @param recruiterAccount
      * @return
      */
-    @RequestMapping("find")
+    @RequestMapping("findwithrecruiter")
     public ResultMsg findPositionByRecruiterAccountID(@RequestBody RecruiterAccount recruiterAccount) {
-        return new ResultMsg("200", "succeess",createPositionRepository.findPositionByRecruiterAccountID(recruiterAccount.getId()));
+
+        return new ResultMsg("200", "succeess", createPositionRepository.findPositionByRecruiterAccountID(recruiterAccount.getId()));
     }
 
     /**
+     * 根据职位ID，查询职位详情信息
+     *
+     * @param jsonObject
+     * @return
+     */
+    @RequestMapping("findwithposition")
+    public ResultMsg findRecruiterPositionById(@RequestBody JSONObject jsonObject) {
+
+        int positionID = Integer.parseInt(jsonObject.get("positionID").toString());
+
+        List<RecruiterPosition> recruiterPositionList = createPositionRepository.findRecruiterPositionById(positionID);
+
+        if (recruiterPositionList.size() > 0) {
+
+            RecruiterPosition recruiterPosition = recruiterPositionList.get(0);
+            return new ResultMsg("200", "succeess", recruiterPosition);
+        }
+
+        return new ResultMsg("4004", "find recruiter position fail", null);
+    }
+
+
+    /**
      * 分页获取职位列表
+     *
      * @param jsonObject
      * @return
      */
     @RequestMapping("querypage")
     public ResultMsg queryRecruiterPositionsByPageIndex(@RequestBody JSONObject jsonObject) {
-        int pageIndex =  Integer.parseInt(jsonObject.get("pageIndex").toString());
-        int pageSize =  Integer.parseInt(jsonObject.get("pageSize").toString());
-        System.out.println("pageIndex:" + jsonObject.get("pageIndex") + ",pageSize:" +jsonObject.get("pageSize"));
+        int pageIndex = Integer.parseInt(jsonObject.get("pageIndex").toString());
+        int pageSize = Integer.parseInt(jsonObject.get("pageSize").toString());
+        System.out.println("pageIndex:" + jsonObject.get("pageIndex") + ",pageSize:" + jsonObject.get("pageSize"));
         return new ResultMsg("200", "success", createPositionRepository.queryRecruiterPositionsByPageIndex(pageIndex, pageSize));
     }
 

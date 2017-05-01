@@ -66,10 +66,34 @@ public class HunterCreateResumeController {
         return resultMsg;
     }
 
-    //根据求职者ID ，查看求职者简历信息(列表）
-    @RequestMapping("find")
+    /**
+     * 根据求职者账号ID ，查找求职者发布的简历列表
+     * @param hunterAccount
+     * @return
+     */
+    @RequestMapping("findwithhunter")
     public ResultMsg findHunterResumeWithHunterAccountId(@RequestBody HunterAccount hunterAccount) {
         return new ResultMsg("200", "succeess", hunterCreateResumeRepository.findHunterResumeByHunterAccountID(hunterAccount.getId()));
+    }
+
+    /**
+     * 根据简历ID，查看简历详情
+     * @param jsonObject
+     * @return
+     */
+    @RequestMapping("findwithresume")
+    public ResultMsg findHunterResumeById(@RequestBody JSONObject jsonObject){
+
+        int resumeID = Integer.parseInt(jsonObject.get("resumeID").toString());
+        List<HunterResume> hunterResumeList = hunterCreateResumeRepository.findHunterResumeById(resumeID);
+
+        if (hunterResumeList.size() > 0) {
+
+            HunterResume hunterResume = hunterResumeList.get(0);
+            return new ResultMsg("200", "succeess", hunterResume);
+        }
+
+        return new ResultMsg("4004", "find recruiter position fail", null);
     }
 
     //查看全部的简历
@@ -93,6 +117,7 @@ public class HunterCreateResumeController {
         System.out.println("pageIndex:" + jsonObject.get("pageIndex") + ",pageSize:" +jsonObject.get("pageSize"));
         return new ResultMsg("200", "success", hunterCreateResumeRepository.queryHunterResumesByPageIndex(pageIndex, pageSize));
     }
+
 
 
 }

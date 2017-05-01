@@ -14,10 +14,26 @@ import java.util.List;
  */
 public interface RecruiterCreatePositionRepository extends CrudRepository<RecruiterPosition,Integer> {
 
-    //根据招聘者ID，查看职位《列表》
+    /**
+     * 根据招聘者ID，查看招聘者发布的所有职位
+     * @param recruiterAccountID
+     * @return
+     */
     public List<RecruiterPosition> findPositionByRecruiterAccountID(int recruiterAccountID);
 
+    /**
+     * 根据职位ID，查询职位详情信息
+     * @param positionID
+     * @return
+     */
+    public List<RecruiterPosition> findRecruiterPositionById(int positionID);
 
+    /**
+     * 分页查询职位列表
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
     @Modifying
     @Transactional
     @Query(value = "SELECT * FROM recruiter_position LIMIT ?1 , ?2",nativeQuery = true)

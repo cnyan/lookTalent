@@ -15,11 +15,20 @@ import java.util.List;
 public interface HunterCreateResumeRepository extends CrudRepository<HunterResume,Integer>{
 
     /**
-     * 根据账号查找求职者账号
+     * 根据求职者账号ID ，查找求职者发布的简历列表
      * @param hunterAccountID
      * @return
      */
     public List<HunterResume> findHunterResumeByHunterAccountID(int hunterAccountID);
+
+
+    /**
+     * 根据简历ID，查看简历详情
+     * @param resumeID
+     * @return
+     */
+    public List<HunterResume> findHunterResumeById(int resumeID);
+
 
     /**
      * 分页查询简历
@@ -31,5 +40,7 @@ public interface HunterCreateResumeRepository extends CrudRepository<HunterResum
     @Transactional
     @Query(value = "SELECT * FROM hunter_resume LIMIT ?1 , ?2",nativeQuery = true)
     public List<HunterResume> queryHunterResumesByPageIndex(int pageIndex,int pageSize);
+
+
 
 }
