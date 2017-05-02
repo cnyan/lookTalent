@@ -72,7 +72,8 @@ public class RecruiterAccountController {
         String recruiter_account = jsonObject.get("recruiterAccount").toString();
         String password = CheckSumBuilder.getMD5(jsonObject.get("password").toString());
 
-        List<RecruiterAccount> recruiterAccountList = recruiterAccountRepository.loginToApp(recruiter_account, password);
+        List<RecruiterAccount> recruiterAccountList =
+                recruiterAccountRepository.loginToApp(recruiter_account, password);
 
         if (recruiterAccountList.size() > 0) {
             RecruiterAccount recruiterAccount = recruiterAccountList.get(0);
@@ -81,7 +82,8 @@ public class RecruiterAccountController {
             return new ResultMsg("200", "success", recruiterAccount);
         }
 
-        return new ResultMsg(ResultStatusCode.ERROR_ACCOUNT.getErrcode(), ResultStatusCode.ERROR_ACCOUNT.getErrmsg(), null);
+        return new ResultMsg(ResultStatusCode.ERROR_ACCOUNT.getErrcode(),
+                ResultStatusCode.ERROR_ACCOUNT.getErrmsg(), null);
     }
 
     /**
@@ -96,7 +98,8 @@ public class RecruiterAccountController {
         String password = CheckSumBuilder.getMD5(jsonObject.get("newPassword").toString());
 
         //根据账号查找招聘者
-        List<RecruiterAccount> recruiterAccountList = recruiterAccountRepository.findRecruiterAccountByRecruiterAccount(hunter_account);
+        List<RecruiterAccount> recruiterAccountList =
+                recruiterAccountRepository.findRecruiterAccountByRecruiterAccount(hunter_account);
 
         if (recruiterAccountList.size() > 0){
             RecruiterAccount recruiterAccount = recruiterAccountList.get(0);
@@ -111,7 +114,8 @@ public class RecruiterAccountController {
     public ResultMsg updateHunterAccountInfo(@RequestBody RecruiterAccount recruiterAccount) {
 
         //根据账号查找招聘者
-        List<RecruiterAccount> recruiterAccountList = recruiterAccountRepository.findRecruiterAccountByRecruiterAccount(recruiterAccount.getRecruiterAccount());
+        List<RecruiterAccount> recruiterAccountList = recruiterAccountRepository.
+                findRecruiterAccountByRecruiterAccount(recruiterAccount.getRecruiterAccount());
 
         if (recruiterAccountList.size() > 0) {
             RecruiterAccount newRecruiterAccount = recruiterAccountList.get(0);

@@ -76,7 +76,8 @@ public class RecruiterCreatePositionController {
      */
     @RequestMapping("queryall")
     public ResultMsg queryAllPosition() {
-        return new ResultMsg("200", "success", createPositionRepository.findAll());
+        return new ResultMsg("200", "success",
+                createPositionRepository.findAll());
     }
 
     /**
@@ -88,7 +89,8 @@ public class RecruiterCreatePositionController {
     @RequestMapping("findwithrecruiter")
     public ResultMsg findPositionByRecruiterAccountID(@RequestBody RecruiterAccount recruiterAccount) {
 
-        return new ResultMsg("200", "succeess", createPositionRepository.findPositionByRecruiterAccountID(recruiterAccount.getId()));
+        return new ResultMsg("200", "succeess",
+                createPositionRepository.findPositionByRecruiterAccountID(recruiterAccount.getId()));
     }
 
     /**
@@ -102,7 +104,8 @@ public class RecruiterCreatePositionController {
 
         int positionID = Integer.parseInt(jsonObject.get("positionID").toString());
 
-        List<RecruiterPosition> recruiterPositionList = createPositionRepository.findRecruiterPositionById(positionID);
+        List<RecruiterPosition> recruiterPositionList =
+                createPositionRepository.findRecruiterPositionById(positionID);
 
         if (recruiterPositionList.size() > 0) {
 
@@ -124,8 +127,9 @@ public class RecruiterCreatePositionController {
     public ResultMsg queryRecruiterPositionsByPageIndex(@RequestBody JSONObject jsonObject) {
         int pageIndex = Integer.parseInt(jsonObject.get("pageIndex").toString());
         int pageSize = Integer.parseInt(jsonObject.get("pageSize").toString());
-        System.out.println("pageIndex:" + jsonObject.get("pageIndex") + ",pageSize:" + jsonObject.get("pageSize"));
-        return new ResultMsg("200", "success", createPositionRepository.queryRecruiterPositionsByPageIndex(pageIndex, pageSize));
+       // System.out.println("pageIndex:" + jsonObject.get("pageIndex") + ",pageSize:" + jsonObject.get("pageSize"));
+        return new ResultMsg("200", "success",
+                createPositionRepository.queryRecruiterPositionsByPageIndex(pageIndex, pageSize));
     }
 
 }

@@ -115,7 +115,8 @@ public class HunterAccountController {
     public ResultMsg updateHunterAccountInfo(@RequestBody HunterAccount hunterAccount) {
 
         //根据账号查找求职者
-        List<HunterAccount> hunterAccountList = hunterAccountRepository.findHunterAccountByHunterAccount(hunterAccount.getHunterAccount());
+        List<HunterAccount> hunterAccountList =
+                hunterAccountRepository.findHunterAccountByHunterAccount(hunterAccount.getHunterAccount());
 
         if (hunterAccountList.size() > 0){
             HunterAccount newHunterAccount = hunterAccountList.get(0);

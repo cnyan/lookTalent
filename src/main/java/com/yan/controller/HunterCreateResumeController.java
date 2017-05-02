@@ -52,7 +52,8 @@ public class HunterCreateResumeController {
         }
 
         //保存个人信息
-        HunterInformation information = hunterCreateInformRepository.save(hunterResume.getHunterInformation());
+        HunterInformation information =
+                hunterCreateInformRepository.save(hunterResume.getHunterInformation());
 
         //构建简历
         result.setHunterCapacityDescList(hunterCapacityDescs);
@@ -73,7 +74,8 @@ public class HunterCreateResumeController {
      */
     @RequestMapping("findwithhunter")
     public ResultMsg findHunterResumeWithHunterAccountId(@RequestBody HunterAccount hunterAccount) {
-        return new ResultMsg("200", "succeess", hunterCreateResumeRepository.findHunterResumeByHunterAccountID(hunterAccount.getId()));
+        return new ResultMsg("200", "success",
+                hunterCreateResumeRepository.findHunterResumeByHunterAccountID(hunterAccount.getId()));
     }
 
     /**
@@ -85,12 +87,13 @@ public class HunterCreateResumeController {
     public ResultMsg findHunterResumeById(@RequestBody JSONObject jsonObject){
 
         int resumeID = Integer.parseInt(jsonObject.get("resumeID").toString());
-        List<HunterResume> hunterResumeList = hunterCreateResumeRepository.findHunterResumeById(resumeID);
+        List<HunterResume> hunterResumeList =
+                hunterCreateResumeRepository.findHunterResumeById(resumeID);
 
         if (hunterResumeList.size() > 0) {
 
             HunterResume hunterResume = hunterResumeList.get(0);
-            return new ResultMsg("200", "succeess", hunterResume);
+            return new ResultMsg("200", "success", hunterResume);
         }
 
         return new ResultMsg("4004", "find recruiter position fail", null);

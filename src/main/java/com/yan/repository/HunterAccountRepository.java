@@ -22,7 +22,7 @@ public interface HunterAccountRepository extends CrudRepository<HunterAccount,In
      */
     @Modifying
     @Transactional
-    @Query(value = "SELECT * FROM recruiter_account WHERE recruiter_account = ?1 AND password = ?2",nativeQuery = true)
+    @Query(value = "SELECT * FROM hunter_account WHERE hunter_account = ?1 AND password = ?2",nativeQuery = true)
     public List<HunterAccount> loginToApp(String recruiter_account, String passwordMD5);
 
 
