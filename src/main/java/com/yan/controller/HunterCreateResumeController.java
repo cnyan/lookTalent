@@ -69,13 +69,16 @@ public class HunterCreateResumeController {
 
     /**
      * 根据求职者账号ID ，查找求职者发布的简历列表
-     * @param hunterAccount
+     * @param jsonObject
      * @return
      */
-    @RequestMapping("findwithhunter")
-    public ResultMsg findHunterResumeWithHunterAccountId(@RequestBody HunterAccount hunterAccount) {
+    @RequestMapping("findResumesWithHunterID")
+    public ResultMsg findHunterResumeWithHunterAccountId(@RequestBody JSONObject jsonObject) {
+
+        int hunterAccountID = Integer.parseInt(jsonObject.get("hunterID").toString());
+
         return new ResultMsg("200", "success",
-                hunterCreateResumeRepository.findHunterResumeByHunterAccountID(hunterAccount.getId()));
+                hunterCreateResumeRepository.findHunterResumeByHunterAccountID(hunterAccountID));
     }
 
     /**
@@ -83,7 +86,7 @@ public class HunterCreateResumeController {
      * @param jsonObject
      * @return
      */
-    @RequestMapping("findwithresume")
+    @RequestMapping("findResumeWithResumeID")
     public ResultMsg findHunterResumeById(@RequestBody JSONObject jsonObject){
 
         int resumeID = Integer.parseInt(jsonObject.get("resumeID").toString());

@@ -83,14 +83,15 @@ public class RecruiterCreatePositionController {
     /**
      * 根据招聘者ID，查看职位《列表》
      *
-     * @param recruiterAccount
+     * @param jsonObject
      * @return
      */
-    @RequestMapping("findwithrecruiter")
-    public ResultMsg findPositionByRecruiterAccountID(@RequestBody RecruiterAccount recruiterAccount) {
+    @RequestMapping("findPositionsWithRecruiterID")
+    public ResultMsg findPositionByRecruiterAccountID(@RequestBody JSONObject jsonObject) {
 
+        int recruiterAccountID = Integer.parseInt(jsonObject.get("recruiterID").toString());
         return new ResultMsg("200", "succeess",
-                createPositionRepository.findPositionByRecruiterAccountID(recruiterAccount.getId()));
+                createPositionRepository.findPositionByRecruiterAccountID(recruiterAccountID));
     }
 
     /**
@@ -99,7 +100,7 @@ public class RecruiterCreatePositionController {
      * @param jsonObject
      * @return
      */
-    @RequestMapping("findwithposition")
+    @RequestMapping("findPositionWithPositionID")
     public ResultMsg findRecruiterPositionById(@RequestBody JSONObject jsonObject) {
 
         int positionID = Integer.parseInt(jsonObject.get("positionID").toString());

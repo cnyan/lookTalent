@@ -14,6 +14,9 @@
 
 <body>
 ${message}
+<br>
+<%=request.getAttribute("message")%>
+
 
 </body>
 </html>
