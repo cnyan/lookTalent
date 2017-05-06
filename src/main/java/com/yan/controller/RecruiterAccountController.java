@@ -129,4 +129,22 @@ public class RecruiterAccountController {
         return new ResultMsg("4004","update person info fail",null);
     }
 
+
+    @RequestMapping("findRecruiter")
+    public ResultMsg findHunterWithID(@RequestBody JSONObject jsonObject){
+
+        int recruiterID = Integer.parseInt(jsonObject.get("recruiterID").toString());
+
+        //根据账号查找求职者
+        List<RecruiterAccount> RecruiterAccountList = recruiterAccountRepository.findRecruiterAccountById(recruiterID);
+
+        if (RecruiterAccountList.size() > 0){
+            RecruiterAccount recruiterAccount = RecruiterAccountList.get(0);
+            recruiterAccount.setPassword("");
+            System.out.println(recruiterAccount);
+            return new ResultMsg("200", "success", recruiterAccount);
+        }
+        return new ResultMsg(ResultStatusCode.ERROR_ACCOUNT.getErrcode(), ResultStatusCode.ERROR_ACCOUNT.getErrmsg(), null);
+    }
+
 }

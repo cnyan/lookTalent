@@ -29,5 +29,8 @@ public interface HunterAccountRepository extends CrudRepository<HunterAccount,In
     //根据账号，查找用户
     public List<HunterAccount> findHunterAccountByHunterAccount(String hunterAccount);
 
+    //根据用户账号ID，查找用户
+    public  List<HunterAccount> findHunterAccountById(int hunterID);
+
 
 }

@@ -131,5 +131,22 @@ public class HunterAccountController {
         return new ResultMsg("4004", "update person info fail", null);
     }
 
+    @RequestMapping("findHunter")
+    public ResultMsg findHunterWithID(@RequestBody JSONObject jsonObject){
+
+        int hunterID = Integer.parseInt(jsonObject.get("hunterID").toString());
+
+        //根据账号查找求职者
+        List<HunterAccount> hunterAccountList = hunterAccountRepository.findHunterAccountById(hunterID);
+
+        if (hunterAccountList.size() > 0){
+            HunterAccount hunterAccount = hunterAccountList.get(0);
+            hunterAccount.setPassword("");
+            System.out.println(hunterAccount);
+            return new ResultMsg("200", "success", hunterAccount);
+        }
+        return new ResultMsg(ResultStatusCode.ERROR_ACCOUNT.getErrcode(), ResultStatusCode.ERROR_ACCOUNT.getErrmsg(), null);
+    }
+
 
 }

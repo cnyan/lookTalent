@@ -33,4 +33,8 @@ public interface RecruiterAccountRepository extends CrudRepository<RecruiterAcco
      * @return
      */
     public List<RecruiterAccount> findRecruiterAccountByRecruiterAccount(String recruiterAccount);
+
+    //根据用户账号ID，查找用户
+    public  List<RecruiterAccount> findRecruiterAccountById(int recruiterID);
+
 }

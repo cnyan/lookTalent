@@ -146,7 +146,7 @@ public class UploadServlet extends HttpServlet {
                     //关闭输出流
                     outputStream.close();
                     //删除处理文件上传时生成的临时文件
-                    //item.delete();
+                    item.delete();
                     //message = "文件上传成功！";
                 }
             }

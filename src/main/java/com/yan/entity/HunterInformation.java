@@ -31,14 +31,14 @@ public class HunterInformation implements Serializable {
     //工作性质(全职、兼职）
     private String jobNature ;
     //求职宣言
-    private String declarations;
+    private String jobDeclarations;
 
 
 
     public HunterInformation() {
     }
 
-    public HunterInformation(String resumeImage, String name, String age, String gender, String email, String jobIntension, String jobNature, String declarations) {
+    public HunterInformation(String resumeImage, String name, String age, String gender, String email, String jobIntension, String jobNature, String jobDeclarations) {
         this.resumeImage = resumeImage;
         this.name = name;
         this.age = age;
@@ -46,7 +46,7 @@ public class HunterInformation implements Serializable {
         this.email = email;
         this.jobIntension = jobIntension;
         this.jobNature = jobNature;
-        this.declarations = declarations;
+        this.jobDeclarations = jobDeclarations;
     }
 
     public int getId() {
@@ -113,12 +113,12 @@ public class HunterInformation implements Serializable {
         this.jobNature = jobNature;
     }
 
-    public String getDeclarations() {
-        return declarations;
+    public String getJobDeclarations() {
+        return jobDeclarations;
     }
 
-    public void setDeclarations(String declarations) {
-        this.declarations = declarations;
+    public void setJobDeclarations(String jobDeclarations) {
+        this.jobDeclarations = jobDeclarations;
     }
 
     @Override
@@ -132,7 +132,7 @@ public class HunterInformation implements Serializable {
                 ", email='" + email + '\'' +
                 ", jobIntension='" + jobIntension + '\'' +
                 ", jobNature='" + jobNature + '\'' +
-                ", declarations='" + declarations + '\'' +
+                ", jobDeclarations='" + jobDeclarations + '\'' +
                 '}';
     }
 }
