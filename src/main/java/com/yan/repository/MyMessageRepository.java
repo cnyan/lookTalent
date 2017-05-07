@@ -23,7 +23,7 @@ public interface MyMessageRepository extends CrudRepository<MyMessage,Integer>{
      */
     @Modifying
     @Transactional
-    @Query(value = "SELECT * FROM my_message WHERE (hunterid = ?1 AND message_type='sendResume')  LIMIT ?2,?3",nativeQuery = true)
+    @Query(value = "SELECT * FROM my_message WHERE (hunterid = ?1 AND message_type='sendResume') order by message_date desc  LIMIT ?2,?3",nativeQuery = true)
     public List<MyMessage> queryMyApplyByHunterID(int hunterID,int pageIndex,int pageSize);
 
 
@@ -36,7 +36,7 @@ public interface MyMessageRepository extends CrudRepository<MyMessage,Integer>{
      */
     @Modifying
     @Transactional
-    @Query(value = "SELECT * FROM my_message WHERE (hunterid = ?1 AND message_type='sendInvite') LIMIT ?2,?3",nativeQuery = true)
+    @Query(value = "SELECT * FROM my_message WHERE (hunterid = ?1 AND message_type='sendInvite') order by message_date desc LIMIT ?2,?3",nativeQuery = true)
     public List<MyMessage> queryMyOfferByHunterID(int hunterID,int pageIndex,int pageSize);
 
     /**
@@ -48,7 +48,7 @@ public interface MyMessageRepository extends CrudRepository<MyMessage,Integer>{
      */
     @Modifying
     @Transactional
-    @Query(value = "SELECT * FROM my_message WHERE (recruiterid = ?1 AND message_type='sendInvite')  LIMIT ?2,?3",nativeQuery = true)
+    @Query(value = "SELECT * FROM my_message WHERE (recruiterid = ?1 AND message_type='sendInvite') order by message_date desc  LIMIT ?2,?3",nativeQuery = true)
     public List<MyMessage> queryMyInviteByRecruiterID(int recruiterID,int pageIndex,int pageSize);
 
 
@@ -61,7 +61,7 @@ public interface MyMessageRepository extends CrudRepository<MyMessage,Integer>{
      */
     @Modifying
     @Transactional
-    @Query(value = "SELECT * FROM my_message WHERE (recruiterid = ?1 AND message_type='sendResume')  LIMIT ?2,?3",nativeQuery = true)
+    @Query(value = "SELECT * FROM my_message WHERE (recruiterid = ?1 AND message_type='sendResume') order by message_date desc  LIMIT ?2,?3",nativeQuery = true)
     public List<MyMessage> queryMyResumeByRecruiterID(int recruiterID,int pageIndex,int pageSize);
 
 }

@@ -38,7 +38,7 @@ public interface HunterCreateResumeRepository extends CrudRepository<HunterResum
      */
     @Modifying
     @Transactional
-    @Query(value = "SELECT * FROM hunter_resume LIMIT ?1 , ?2",nativeQuery = true)
+    @Query(value = "SELECT * FROM hunter_resume ORDER BY rand() LIMIT ?1 , ?2",nativeQuery = true)
     public List<HunterResume> queryHunterResumesByPageIndex(int pageIndex,int pageSize);
 
 

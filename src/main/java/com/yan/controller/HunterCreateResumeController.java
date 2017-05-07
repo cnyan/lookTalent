@@ -12,7 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.PostRemove;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,6 +39,10 @@ public class HunterCreateResumeController {
         //先创建一个简历（null)
         HunterResume resume = new HunterResume();
         resume.setHunterAccountID(hunterResume.getHunterAccountID());
+        resume.setHunterCount(0);//邀请次数
+        Date createDate = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        resume.setCreateDate(dateFormat.format(createDate));//创建时间
         HunterResume result = hunterCreateResumeRepository.save(resume);
 
         //保存能力描述

@@ -36,6 +36,6 @@ public interface RecruiterCreatePositionRepository extends CrudRepository<Recrui
      */
     @Modifying
     @Transactional
-    @Query(value = "SELECT * FROM recruiter_position LIMIT ?1 , ?2",nativeQuery = true)
+    @Query(value = "SELECT * FROM recruiter_position ORDER BY rand() LIMIT ?1 , ?2",nativeQuery = true)
     public List<RecruiterPosition> queryRecruiterPositionsByPageIndex(int pageIndex,int pageSize);
 }

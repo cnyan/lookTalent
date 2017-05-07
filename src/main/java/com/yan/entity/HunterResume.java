@@ -19,6 +19,10 @@ public class HunterResume implements Serializable {
 
     //求职者ID
     private int hunterAccountID;
+    //被邀请次数
+    private int hunterCount;
+    //创建时间
+    private String createDate;
 
     /**
      *    个人信息
@@ -39,8 +43,10 @@ public class HunterResume implements Serializable {
     public HunterResume() {
     }
 
-    public HunterResume(int hunterAccountID, HunterInformation hunterInformation, List<HunterEducation> hunterEducation, List<HunterCapacityDesc> hunterCapacityDescList) {
+    public HunterResume(int hunterAccountID, int hunterCount, String createDate, HunterInformation hunterInformation, List<HunterEducation> hunterEducation, List<HunterCapacityDesc> hunterCapacityDescList) {
         this.hunterAccountID = hunterAccountID;
+        this.hunterCount = hunterCount;
+        this.createDate = createDate;
         this.hunterInformation = hunterInformation;
         this.hunterEducation = hunterEducation;
         this.hunterCapacityDescList = hunterCapacityDescList;
@@ -60,6 +66,22 @@ public class HunterResume implements Serializable {
 
     public void setHunterAccountID(int hunterAccountID) {
         this.hunterAccountID = hunterAccountID;
+    }
+
+    public int getHunterCount() {
+        return hunterCount;
+    }
+
+    public void setHunterCount(int hunterCount) {
+        this.hunterCount = hunterCount;
+    }
+
+    public String getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
     }
 
     public HunterInformation getHunterInformation() {
@@ -91,6 +113,8 @@ public class HunterResume implements Serializable {
         return "HunterResume{" +
                 "id=" + id +
                 ", hunterAccountID=" + hunterAccountID +
+                ", hunterCount=" + hunterCount +
+                ", createDate='" + createDate + '\'' +
                 ", hunterInformation=" + hunterInformation +
                 ", hunterEducation=" + hunterEducation +
                 ", hunterCapacityDescList=" + hunterCapacityDescList +

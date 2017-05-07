@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by 闫继龙 on 2017/5/1.
  * * 我的消息
@@ -33,6 +36,9 @@ public class MyMessageController {
         if (!(myMessage.getMessageType().equals("sendResume")||myMessage.getMessageType().equals("sendInvite"))){
             return new ResultMsg("4004","the messageType must be  sendResume or sendInvite",null);
         }
+        Date createDate = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        myMessage.setMessageDate(dateFormat.format(createDate));//创建时间
         messageRepository.save(myMessage);
         return new ResultMsg("200","send resume success",null);
     }

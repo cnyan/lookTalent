@@ -17,7 +17,10 @@ public class RecruiterPosition {
 
     //招聘者ID
     private int recruiterAccountID;
-
+    //被申请次数
+    private int recruiterCount;
+    //创建时间
+    private String createDate;
     /**
      * 职位信息表
      */
@@ -38,8 +41,10 @@ public class RecruiterPosition {
     public RecruiterPosition() {
     }
 
-    public RecruiterPosition(int recruiterAccountID, RecruiterInformation recruiterInformation, RecruiterCompanyInfo recruiterCompanyInfo, List<RecruiterPositionDesc> recruiterPositionDescs) {
+    public RecruiterPosition(int recruiterAccountID, int recruiterCount, String createDate, RecruiterInformation recruiterInformation, RecruiterCompanyInfo recruiterCompanyInfo, List<RecruiterPositionDesc> recruiterPositionDescs) {
         this.recruiterAccountID = recruiterAccountID;
+        this.recruiterCount = recruiterCount;
+        this.createDate = createDate;
         this.recruiterInformation = recruiterInformation;
         this.recruiterCompanyInfo = recruiterCompanyInfo;
         this.recruiterPositionDescs = recruiterPositionDescs;
@@ -59,6 +64,22 @@ public class RecruiterPosition {
 
     public void setRecruiterAccountID(int recruiterAccountID) {
         this.recruiterAccountID = recruiterAccountID;
+    }
+
+    public int getRecruiterCount() {
+        return recruiterCount;
+    }
+
+    public void setRecruiterCount(int recruiterCount) {
+        this.recruiterCount = recruiterCount;
+    }
+
+    public String getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
     }
 
     public RecruiterInformation getRecruiterInformation() {
@@ -90,6 +111,8 @@ public class RecruiterPosition {
         return "RecruiterPosition{" +
                 "id=" + id +
                 ", recruiterAccountID=" + recruiterAccountID +
+                ", recruiterCount=" + recruiterCount +
+                ", createDate='" + createDate + '\'' +
                 ", recruiterInformation=" + recruiterInformation +
                 ", recruiterCompanyInfo=" + recruiterCompanyInfo +
                 ", recruiterPositionDescs=" + recruiterPositionDescs +

@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -44,6 +46,10 @@ public class RecruiterCreatePositionController {
         //先创建一个职位
         RecruiterPosition position = new RecruiterPosition();
         position.setRecruiterAccountID(recruiterPosition.getRecruiterAccountID());
+        position.setRecruiterCount(0);
+        Date createDate = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        position.setCreateDate(dateFormat.format(createDate));
         position = createPositionRepository.save(position);
 
         //保存职位信息
