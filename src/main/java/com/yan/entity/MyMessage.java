@@ -24,8 +24,10 @@ public class MyMessage {
     private int resumeID;       //简历ID
     private int positionID;     //职位ID
 
-    private String cover;          //消息封面图片(公司封面||求职者头像)
-    private String name;            //公司名称||求职者名字
+    private String companyCover;          //消息封面图片(公司封面|
+    private String hunterCover;             //|求职者头像)
+    private String companyName;            //公司名称
+    private String hunterName;          //求职者名字
     private String positionName;    //职位名称
 
     private String messageType;     //消息类型（sendResume||sendInvite）
@@ -34,13 +36,15 @@ public class MyMessage {
     public MyMessage() {
     }
 
-    public MyMessage(int hunterID, int recruiterID, int resumeID, int positionID, String cover, String name, String positionName, String messageType, String messageDate) {
+    public MyMessage(int hunterID, int recruiterID, int resumeID, int positionID, String companyCover, String hunterCover, String companyName, String hunterName, String positionName, String messageType, String messageDate) {
         this.hunterID = hunterID;
         this.recruiterID = recruiterID;
         this.resumeID = resumeID;
         this.positionID = positionID;
-        this.cover = cover;
-        this.name = name;
+        this.companyCover = companyCover;
+        this.hunterCover = hunterCover;
+        this.companyName = companyName;
+        this.hunterName = hunterName;
         this.positionName = positionName;
         this.messageType = messageType;
         this.messageDate = messageDate;
@@ -86,20 +90,36 @@ public class MyMessage {
         this.positionID = positionID;
     }
 
-    public String getCover() {
-        return cover;
+    public String getCompanyCover() {
+        return companyCover;
     }
 
-    public void setCover(String cover) {
-        this.cover = cover;
+    public void setCompanyCover(String companyCover) {
+        this.companyCover = companyCover;
     }
 
-    public String getName() {
-        return name;
+    public String getHunterCover() {
+        return hunterCover;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setHunterCover(String hunterCover) {
+        this.hunterCover = hunterCover;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getHunterName() {
+        return hunterName;
+    }
+
+    public void setHunterName(String hunterName) {
+        this.hunterName = hunterName;
     }
 
     public String getPositionName() {
@@ -134,8 +154,10 @@ public class MyMessage {
                 ", recruiterID=" + recruiterID +
                 ", resumeID=" + resumeID +
                 ", positionID=" + positionID +
-                ", cover='" + cover + '\'' +
-                ", name='" + name + '\'' +
+                ", companyCover='" + companyCover + '\'' +
+                ", hunterCover='" + hunterCover + '\'' +
+                ", companyName='" + companyName + '\'' +
+                ", hunterName='" + hunterName + '\'' +
                 ", positionName='" + positionName + '\'' +
                 ", messageType='" + messageType + '\'' +
                 ", messageDate='" + messageDate + '\'' +
