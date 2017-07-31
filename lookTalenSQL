@@ -1,0 +1,1112 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : MySQL
+Source Server Version : 50543
+Source Host           : localhost:3306
+Source Database       : looktalentdb
+
+Target Server Type    : MYSQL
+Target Server Version : 50543
+File Encoding         : 65001
+
+Date: 2017-07-31 22:17:50
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for hunter_account
+-- ----------------------------
+DROP TABLE IF EXISTS `hunter_account`;
+CREATE TABLE `hunter_account` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `head_image` varchar(255) DEFAULT NULL,
+  `hunter_account` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `token_key` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of hunter_account
+-- ----------------------------
+INSERT INTO `hunter_account` VALUES ('1', 'http://opb0odz3w.bkt.clouddn.com/Fg_mhXOoBN8toIjs370IVbF-cpMO', 'hunter5', '娜扎', 'e10adc3949ba59abbe56e057f20f883e', 'c40e319430760bdcaa826ca0e9a05948');
+INSERT INTO `hunter_account` VALUES ('2', 'http://opb0odz3w.bkt.clouddn.com/FtTBoh_DlXmaA6GmvE5xp4UVL2kj', 'hunter6', '赵丽颖', 'e10adc3949ba59abbe56e057f20f883e', '02622579bd07e9c23f5dee8881aaa68b');
+INSERT INTO `hunter_account` VALUES ('3', 'http://opb0odz3w.bkt.clouddn.com/Fml188cthHOKhHkCcnsbFaczQ6vS', 'hunter7', '周杰伦', 'e10adc3949ba59abbe56e057f20f883e', '25e4197ff76f58bbb66afc5062a23151');
+INSERT INTO `hunter_account` VALUES ('4', 'http://opb0odz3w.bkt.clouddn.com/FrIPBnKcimL5j-rPDZWdU7kefn78', 'hunter8', '邓超', 'e10adc3949ba59abbe56e057f20f883e', '63d742230a9839e040845394c580b94e');
+INSERT INTO `hunter_account` VALUES ('5', 'http://opb0odz3w.bkt.clouddn.com/Fv0ADWwf9oebL1nK26D3PMxB9tRn', 'hunter9', '杨戬', 'e10adc3949ba59abbe56e057f20f883e', 'fccecb9e76574f69c53b788cfa9dde89');
+INSERT INTO `hunter_account` VALUES ('6', 'http://opb0odz3w.bkt.clouddn.com/FpnOVDPuxHjtIKcKs8nwul3uBS9y', 'hunter10', '哪吒', 'e10adc3949ba59abbe56e057f20f883e', 'de79dbffaf5b3ac91c621455238edba6');
+INSERT INTO `hunter_account` VALUES ('7', 'http://opb0odz3w.bkt.clouddn.com/FqGOW89uYSoq6SUEF803aqqijqxL', 'hunter11', '土行孙', 'e10adc3949ba59abbe56e057f20f883e', '8701c66d2901142e3d946422faf12a69');
+INSERT INTO `hunter_account` VALUES ('8', 'http://opb0odz3w.bkt.clouddn.com/FirRPq_AM2SnFVC6Opi3GMUFadui', 'hunter12', '松江', 'e10adc3949ba59abbe56e057f20f883e', '997788ca3baa573111d4b4b637f9b441');
+INSERT INTO `hunter_account` VALUES ('9', 'http://opb0odz3w.bkt.clouddn.com/FuUtivnAVgpJOt_0p1JD2abSQukF', 'hunter13', '卢俊义', 'e10adc3949ba59abbe56e057f20f883e', '0d9850cba484eacdc7e9087a7011135a');
+INSERT INTO `hunter_account` VALUES ('10', 'http://opb0odz3w.bkt.clouddn.com/Fr24Y8acsYoO9VvosAy9pp0erDEH', 'hunter14', '闫纪龙', 'e10adc3949ba59abbe56e057f20f883e', 'a0f230ee0d3ce46e5be83e931aa1946c');
+INSERT INTO `hunter_account` VALUES ('11', 'http://opb0odz3w.bkt.clouddn.com/Fnlq0Xl2htKry3kbCbh7HcZs2JQq', 'hunter15', '玲玲', 'e10adc3949ba59abbe56e057f20f883e', 'db534a641201dce754258b8a093228eb');
+INSERT INTO `hunter_account` VALUES ('12', 'FtmjVVWnzwV4KObSEvHfDaS4rlxT', 'hunter16', '吴用', 'e10adc3949ba59abbe56e057f20f883e', '4c062be56da1abf0e61197dcc0b0539e');
+INSERT INTO `hunter_account` VALUES ('13', 'FtmjVVWnzwV4KObSEvHfDaS4rlxT', 'hunter17', '唐僧', 'e10adc3949ba59abbe56e057f20f883e', 'd824c708d79a47df078ef3fde89e7f39');
+INSERT INTO `hunter_account` VALUES ('14', 'FtmjVVWnzwV4KObSEvHfDaS4rlxT', 'hunter18', '花荣', 'e10adc3949ba59abbe56e057f20f883e', 'ec171622774cb345f43cbebf54d413d4');
+INSERT INTO `hunter_account` VALUES ('15', 'http://FtmjVVWnzwV4KObSEvHfDaS4rlxT', 'hunter19', '武松', 'e10adc3949ba59abbe56e057f20f883e', 'eb2e57086d3b20352359f6ff14415605');
+INSERT INTO `hunter_account` VALUES ('16', 'http://FtmjVVWnzwV4KObSEvHfDaS4rlxT', 'hunter20', '张清', 'e10adc3949ba59abbe56e057f20f883e', 'cbd692a2fdf0827f7a1668f6597b813e');
+
+-- ----------------------------
+-- Table structure for hunter_capacity_desc
+-- ----------------------------
+DROP TABLE IF EXISTS `hunter_capacity_desc`;
+CREATE TABLE `hunter_capacity_desc` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `capacity_desc` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of hunter_capacity_desc
+-- ----------------------------
+INSERT INTO `hunter_capacity_desc` VALUES ('1', '能力描述1');
+INSERT INTO `hunter_capacity_desc` VALUES ('2', '能力描述2');
+INSERT INTO `hunter_capacity_desc` VALUES ('3', '能力描述3');
+INSERT INTO `hunter_capacity_desc` VALUES ('4', '能力描述4');
+INSERT INTO `hunter_capacity_desc` VALUES ('5', '能力描述5');
+INSERT INTO `hunter_capacity_desc` VALUES ('6', '能力描述1');
+INSERT INTO `hunter_capacity_desc` VALUES ('7', '能力描述2');
+INSERT INTO `hunter_capacity_desc` VALUES ('8', '能力描述3');
+INSERT INTO `hunter_capacity_desc` VALUES ('9', '能力描述4');
+INSERT INTO `hunter_capacity_desc` VALUES ('10', '能力描述5');
+INSERT INTO `hunter_capacity_desc` VALUES ('11', '能力描述1');
+INSERT INTO `hunter_capacity_desc` VALUES ('12', '能力描述2');
+INSERT INTO `hunter_capacity_desc` VALUES ('13', '能力描述3');
+INSERT INTO `hunter_capacity_desc` VALUES ('14', '能力描述4');
+INSERT INTO `hunter_capacity_desc` VALUES ('15', '能力描述5');
+INSERT INTO `hunter_capacity_desc` VALUES ('16', '编程基础扎实，具有良好的编程习惯和代码编写能力');
+INSERT INTO `hunter_capacity_desc` VALUES ('17', '熟悉面向对象和设计模式，具备spring/hibernate/myBatis等开源框架应用经验');
+INSERT INTO `hunter_capacity_desc` VALUES ('18', '熟悉MySQL数据库，熟悉非关系型数据库Mongo DB等，具有数据库优化经验');
+INSERT INTO `hunter_capacity_desc` VALUES ('19', '能够根据产品特点设计架构，并对框架进行优化');
+INSERT INTO `hunter_capacity_desc` VALUES ('20', '有严谨的逻辑思维，强烈的技术热情,善于合作,喜欢有挑战性的工作');
+INSERT INTO `hunter_capacity_desc` VALUES ('21', '我精通Java语言基础知识');
+INSERT INTO `hunter_capacity_desc` VALUES ('22', '会熟练的使用Java数据库');
+INSERT INTO `hunter_capacity_desc` VALUES ('23', '工作责任心强，热情帮助人，善于团结合作与人沟通');
+INSERT INTO `hunter_capacity_desc` VALUES ('24', '认真吃苦，努力学习');
+INSERT INTO `hunter_capacity_desc` VALUES ('25', '有一颗爱孜孜不倦的心与动力');
+INSERT INTO `hunter_capacity_desc` VALUES ('26', '编程基础扎实，具有良好的编程习惯和代码编写能力');
+INSERT INTO `hunter_capacity_desc` VALUES ('27', '熟悉面向对象和设计模式，具备spring/hibernate/myBatis等开源框架应用经验');
+INSERT INTO `hunter_capacity_desc` VALUES ('28', '熟悉MySQL数据库，熟悉非关系型数据库Mongo DB等，具有数据库优化经验');
+INSERT INTO `hunter_capacity_desc` VALUES ('29', '能够根据产品特点设计架构，并对框架进行优化');
+INSERT INTO `hunter_capacity_desc` VALUES ('30', '有严谨的逻辑思维，强烈的技术热情,善于合作,喜欢有挑战性的工作');
+INSERT INTO `hunter_capacity_desc` VALUES ('31', '熟悉HTML5+CSS3+JS编程、熟悉各种前端调试工具、熟悉JS性能优化');
+INSERT INTO `hunter_capacity_desc` VALUES ('32', '熟悉jQuery等主流的JS库，了解其运行机制');
+INSERT INTO `hunter_capacity_desc` VALUES ('33', '精通面向对象分析和设计技尸包括设计模式、UML建模等 ');
+INSERT INTO `hunter_capacity_desc` VALUES ('34', '熟练使用、sqlserver、mysql等常用的数据库系统，对数据库有较强的设计能力');
+INSERT INTO `hunter_capacity_desc` VALUES ('35', '有严谨的逻辑思维，强烈的技术热情,善于合作,喜欢有挑战性的工作');
+INSERT INTO `hunter_capacity_desc` VALUES ('36', '我具备深厚的知识背景和开阔的社会视野');
+INSERT INTO `hunter_capacity_desc` VALUES ('37', '我熟悉网站内容生产、传播流程');
+INSERT INTO `hunter_capacity_desc` VALUES ('38', '工作责任心强，热情帮助人，善于团结合作与人沟通');
+INSERT INTO `hunter_capacity_desc` VALUES ('39', '我还具备较强的新媒体内容创意、策划能力');
+INSERT INTO `hunter_capacity_desc` VALUES ('40', '除此之外我具备三年以上新媒体中、高级管理资历');
+INSERT INTO `hunter_capacity_desc` VALUES ('41', '我熟知网络电视台各业务平台广告营销策略及业务流程');
+INSERT INTO `hunter_capacity_desc` VALUES ('42', '我具有较强的网络营销策划能力和组织实施能力');
+INSERT INTO `hunter_capacity_desc` VALUES ('43', '我具有良好的沟通能力高度的敬业与团队合作精神');
+INSERT INTO `hunter_capacity_desc` VALUES ('44', '我还具备团队意识能够承受较大工作压力');
+INSERT INTO `hunter_capacity_desc` VALUES ('45', '除此之外我具备有新媒体从业经验三年');
+INSERT INTO `hunter_capacity_desc` VALUES ('46', '独立负责过大量用户的web产品架构');
+INSERT INTO `hunter_capacity_desc` VALUES ('47', '熟悉jQuery等主流的JS库，了解其运行机制');
+INSERT INTO `hunter_capacity_desc` VALUES ('48', '精通Web以及Mobile Web开发 ');
+INSERT INTO `hunter_capacity_desc` VALUES ('49', '熟悉前端构建工具如：gulp、grunt、webpack5、熟悉构建辅助插件如: postcss，less，uglify，joshing等');
+INSERT INTO `hunter_capacity_desc` VALUES ('50', '学习能力强，有较好的沟通能力，能迅速融入团队');
+INSERT INTO `hunter_capacity_desc` VALUES ('51', '精通java开发语言，有扎实的java编码基础');
+INSERT INTO `hunter_capacity_desc` VALUES ('52', '精通JSP、Servlet、javaBean、HTML、JavaScript、css、Ajax、jQuery、ext、dwz等WEB应用开发技术');
+INSERT INTO `hunter_capacity_desc` VALUES ('53', '熟练使用Eclipse开发环境和SVN版本管理工具');
+INSERT INTO `hunter_capacity_desc` VALUES ('54', '熟练使用Struts、Spring、Hibernate、DWR等Web应用开发');
+INSERT INTO `hunter_capacity_desc` VALUES ('55', '学习能力强，有较好的沟通能力，能迅速融入团队');
+INSERT INTO `hunter_capacity_desc` VALUES ('56', '精通JAVA、ORACLE数据库PL/SQL编程');
+INSERT INTO `hunter_capacity_desc` VALUES ('57', '熟练掌握XHTML 、JavaScript 、CSS 、Ajax 等网站前台开发技术');
+INSERT INTO `hunter_capacity_desc` VALUES ('58', '熟练使用Eclipse开发环境和SVN版本管理工具');
+INSERT INTO `hunter_capacity_desc` VALUES ('59', '熟练使用Struts、Spring、Hibernate、DWR等Web应用开发');
+INSERT INTO `hunter_capacity_desc` VALUES ('60', '学习能力强，有较好的沟通能力，能迅速融入团队');
+INSERT INTO `hunter_capacity_desc` VALUES ('61', '精通JAVA、ORACLE数据库PL/SQL编程');
+INSERT INTO `hunter_capacity_desc` VALUES ('62', '熟练掌握XHTML 、JavaScript 、CSS 、Ajax 等网站前台开发技术');
+INSERT INTO `hunter_capacity_desc` VALUES ('63', '熟练使用Eclipse开发环境和SVN版本管理工具');
+INSERT INTO `hunter_capacity_desc` VALUES ('64', '精通spring/struts/ hibernate框架；熟悉Tomcat，JSP/Servlet');
+INSERT INTO `hunter_capacity_desc` VALUES ('65', '学习能力强，有较好的沟通能力，能迅速融入团队');
+INSERT INTO `hunter_capacity_desc` VALUES ('66', '精通HTML/CSS/JavaScript，精通DIV+CSS网页布局，熟悉W3C网页标准');
+INSERT INTO `hunter_capacity_desc` VALUES ('67', '熟悉AJAX/JSON/XML等，熟练使用jQuery框架');
+INSERT INTO `hunter_capacity_desc` VALUES ('68', '熟悉浏览器兼容性，代码能够兼容目前主流浏览器IE6/7/8/9/10、Firefox、Safari、Chrome等');
+INSERT INTO `hunter_capacity_desc` VALUES ('69', '精通面向对象分析和设计技尸包括设计模式、UML建模等');
+INSERT INTO `hunter_capacity_desc` VALUES ('70', '学习能力强，有较好的沟通能力，能迅速融入团队');
+INSERT INTO `hunter_capacity_desc` VALUES ('71', '独立负责过大量用户的web产品架构');
+INSERT INTO `hunter_capacity_desc` VALUES ('72', '熟悉AJAX/JSON/XML等，熟练使用jQuery框架');
+INSERT INTO `hunter_capacity_desc` VALUES ('73', '熟悉浏览器兼容性，代码能够兼容目前主流浏览器IE6/7/8/9/10、Firefox、Safari、Chrome等');
+INSERT INTO `hunter_capacity_desc` VALUES ('74', '精通面向对象分析和设计技尸包括设计模式、UML建模等');
+INSERT INTO `hunter_capacity_desc` VALUES ('75', '有严谨的逻辑思维，强烈的技术热情,善于合作,喜欢有挑战性的工作');
+INSERT INTO `hunter_capacity_desc` VALUES ('76', '独立负责过大量用户的web产品架构');
+INSERT INTO `hunter_capacity_desc` VALUES ('77', '熟悉Cocoa Touch框架，熟练使用Object-C开发语言、XCode、Interface Builder等开发工具');
+INSERT INTO `hunter_capacity_desc` VALUES ('78', '熟悉iPhone/iPad开发技术，包括UI、多线程、Socket网络通信等方面');
+INSERT INTO `hunter_capacity_desc` VALUES ('79', '熟悉iPhone/iPad开发技术，包括UI、多线程、Socket网络通信等方面');
+INSERT INTO `hunter_capacity_desc` VALUES ('80', '有严谨的逻辑思维，强烈的技术热情,善于合作,喜欢有挑战性的工作');
+INSERT INTO `hunter_capacity_desc` VALUES ('81', '具有IT行业技术开发经验和项目管理工作经验');
+INSERT INTO `hunter_capacity_desc` VALUES ('82', '熟悉通信或IT产品的研发流程，具有深刻的理解和实践经验');
+INSERT INTO `hunter_capacity_desc` VALUES ('83', '学习计算机、通信相关专业，接受过专业计算机方面的培训');
+INSERT INTO `hunter_capacity_desc` VALUES ('84', '具有良好的语言表达能力、沟通协调能力，良好的管理、组织和协调能力');
+INSERT INTO `hunter_capacity_desc` VALUES ('85', '除了计算机技术相关要求外，还具备对应行业的专业知识');
+INSERT INTO `hunter_capacity_desc` VALUES ('86', '具有IT行业技术开发经验和项目管理工作经验');
+INSERT INTO `hunter_capacity_desc` VALUES ('87', '熟悉通信或IT产品的研发流程，具有深刻的理解和实践经验');
+INSERT INTO `hunter_capacity_desc` VALUES ('88', '学习计算机、通信相关专业，接受过专业计算机方面的培训');
+INSERT INTO `hunter_capacity_desc` VALUES ('89', '具有良好的语言表达能力、沟通协调能力，良好的管理、组织和协调能力');
+INSERT INTO `hunter_capacity_desc` VALUES ('90', '除了计算机技术相关要求外，还具备对应行业的专业知识');
+INSERT INTO `hunter_capacity_desc` VALUES ('91', '熟悉Oracle、DB2等数据库的设计、开发 ');
+INSERT INTO `hunter_capacity_desc` VALUES ('92', '熟悉J2EE体系架构，具有JSP、JAVABEAN开发经验');
+INSERT INTO `hunter_capacity_desc` VALUES ('93', '熟悉MVC设计模式，至少一年以上基于struts或其他类似FrameWork的开发经验 ');
+INSERT INTO `hunter_capacity_desc` VALUES ('94', '具有良好的语言表达能力、沟通协调能力，良好的管理、组织和协调能力');
+INSERT INTO `hunter_capacity_desc` VALUES ('95', '擅长使用javascript进行开发和设计，熟悉extjs技术');
+INSERT INTO `hunter_capacity_desc` VALUES ('96', '独立负责过大量用户的web产品架构');
+INSERT INTO `hunter_capacity_desc` VALUES ('97', '熟悉HTML5+CSS3+JS编程、熟悉各种前端调试工具、熟悉JS性能优化');
+INSERT INTO `hunter_capacity_desc` VALUES ('98', '精通面向对象分析和设计技尸包括设计模式、UML建模等');
+INSERT INTO `hunter_capacity_desc` VALUES ('99', '有较丰富的网页制作经验，熟练使用Photoshop切图等');
+INSERT INTO `hunter_capacity_desc` VALUES ('100', '学习能力强，有较好的沟通能力，能迅速融入团队');
+INSERT INTO `hunter_capacity_desc` VALUES ('101', '能力描述1');
+INSERT INTO `hunter_capacity_desc` VALUES ('102', '能力描述2');
+INSERT INTO `hunter_capacity_desc` VALUES ('103', '能力描述3');
+
+-- ----------------------------
+-- Table structure for hunter_education
+-- ----------------------------
+DROP TABLE IF EXISTS `hunter_education`;
+CREATE TABLE `hunter_education` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `end_time` varchar(255) DEFAULT NULL,
+  `professional` varchar(255) DEFAULT NULL,
+  `qualifications` varchar(255) DEFAULT NULL,
+  `school_name` varchar(255) DEFAULT NULL,
+  `start_time` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of hunter_education
+-- ----------------------------
+INSERT INTO `hunter_education` VALUES ('1', '2015-02-02', '天文学', '大专', '皇家中学', '2012-02-02');
+INSERT INTO `hunter_education` VALUES ('2', '2015-03-03', '天文学', '大专', '皇家中学', '2012-03-03');
+INSERT INTO `hunter_education` VALUES ('3', '2015-02-02', '天文学', '大专', '皇家中学', '2012-02-02');
+INSERT INTO `hunter_education` VALUES ('4', '2015-03-03', '天文学', '大专', '皇家中学', '2012-03-03');
+INSERT INTO `hunter_education` VALUES ('5', '2015-02-02', '天文学', '大专', '皇家中学', '2012-02-02');
+INSERT INTO `hunter_education` VALUES ('6', '2015-03-03', '天文学', '大专', '皇家中学', '2012-03-03');
+INSERT INTO `hunter_education` VALUES ('7', '2015-06-02', '编程', '中学', '芜湖中学', '2012-09-02');
+INSERT INTO `hunter_education` VALUES ('8', '2017-06-03', '编程', '高中', '芜湖一中', '2015-09-03');
+INSERT INTO `hunter_education` VALUES ('9', '2017-02-02', '计算机工程', '研究生', '南京大学', '2012-05-01');
+INSERT INTO `hunter_education` VALUES ('10', '2015-03-03', '理科', '高中', '皇家中学', '2012-03-03');
+INSERT INTO `hunter_education` VALUES ('11', '2015-06-02', '编程', '高中', '芜湖一中', '2012-09-02');
+INSERT INTO `hunter_education` VALUES ('12', '2017-06-03', '编程', '大学', '安徽信息工程学院', '2015-09-03');
+INSERT INTO `hunter_education` VALUES ('13', '2015-06-02', '编程', '高中', '芜湖一中', '2012-09-02');
+INSERT INTO `hunter_education` VALUES ('14', '2017-06-03', '编程', '大学', '安徽信息工程学院', '2015-09-03');
+INSERT INTO `hunter_education` VALUES ('15', '2017-02-02', '计算机工程', '研究生', '安徽理工大学', '2012-05-01');
+INSERT INTO `hunter_education` VALUES ('16', '2015-03-03', '理科', '高中', '坝镇中学', '2012-03-03');
+INSERT INTO `hunter_education` VALUES ('17', '2017-02-02', '计算机工程', '研究生', '哈工大学', '2012-05-01');
+INSERT INTO `hunter_education` VALUES ('18', '2015-03-03', '理科', '高中', '朝阳中学', '2012-03-03');
+INSERT INTO `hunter_education` VALUES ('19', '2013-06-02', '编程', '高中', '芜湖二中', '2010-09-02');
+INSERT INTO `hunter_education` VALUES ('20', '2017-06-03', '编程', '大学', '安徽信息工程学院', '2013-09-03');
+INSERT INTO `hunter_education` VALUES ('21', '2013-06-02', '编程', '高中', '芜湖二中', '2010-09-02');
+INSERT INTO `hunter_education` VALUES ('22', '2017-06-03', '编程', '大学', '安徽信息工程学院', '2013-09-03');
+INSERT INTO `hunter_education` VALUES ('23', '2006-06-02', '编程', '高中', '六安二中', '2003-09-02');
+INSERT INTO `hunter_education` VALUES ('24', '2010-06-03', '编程', '大学', '安徽工程大学', '2006-09-03');
+INSERT INTO `hunter_education` VALUES ('25', '2006-06-02', '编程', '高中', '六安二中', '2003-09-02');
+INSERT INTO `hunter_education` VALUES ('26', '2010-06-03', '编程', '大学', '安徽工程大学', '2006-09-03');
+INSERT INTO `hunter_education` VALUES ('27', '2006-06-02', '编程', '高中', '六安二中', '2003-09-02');
+INSERT INTO `hunter_education` VALUES ('28', '2010-06-03', '编程', '大学', '安徽工程大学', '2006-09-03');
+INSERT INTO `hunter_education` VALUES ('29', '2006-06-02', '编程', '高中', '六安二中', '2003-09-02');
+INSERT INTO `hunter_education` VALUES ('30', '2010-06-03', '编程', '大学', '安徽工程大学', '2006-09-03');
+INSERT INTO `hunter_education` VALUES ('31', '2006-06-02', '编程', '高中', '六安二中', '2003-09-02');
+INSERT INTO `hunter_education` VALUES ('32', '2010-06-03', '编程', '大学', '安徽工程大学', '2006-09-03');
+INSERT INTO `hunter_education` VALUES ('33', '2006-06-02', '编程', '高中', '六安二中', '2003-09-02');
+INSERT INTO `hunter_education` VALUES ('34', '2010-06-03', '编程', '大学', '安徽工程大学', '2006-09-03');
+INSERT INTO `hunter_education` VALUES ('35', '2006-06-02', '编程', '高中', '六安二中', '2003-09-02');
+INSERT INTO `hunter_education` VALUES ('36', '2010-06-03', '编程', '大学', '安徽工程大学', '2006-09-03');
+INSERT INTO `hunter_education` VALUES ('37', '2006-06-02', '编程', '高中', '六安二中', '2003-09-02');
+INSERT INTO `hunter_education` VALUES ('38', '2010-06-03', '编程', '大学', '安徽工程大学', '2006-09-03');
+INSERT INTO `hunter_education` VALUES ('39', '2006-06-02', '编程', '高中', '六安二中', '2003-09-02');
+INSERT INTO `hunter_education` VALUES ('40', '2010-06-03', '编程', '大学', '安徽工程大学', '2006-09-03');
+INSERT INTO `hunter_education` VALUES ('41', '2015-02-02', '天文学', '大专', '皇家中学', '2012-02-02');
+INSERT INTO `hunter_education` VALUES ('42', '2015-03-03', '天文学', '大专', '皇家中学', '2012-03-03');
+
+-- ----------------------------
+-- Table structure for hunter_information
+-- ----------------------------
+DROP TABLE IF EXISTS `hunter_information`;
+CREATE TABLE `hunter_information` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `age` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `gender` varchar(255) DEFAULT NULL,
+  `job_intension` varchar(255) DEFAULT NULL,
+  `job_nature` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `resume_image` varchar(255) DEFAULT NULL,
+  `job_declarations` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of hunter_information
+-- ----------------------------
+INSERT INTO `hunter_information` VALUES ('1', '23', '1366426163@qq.com', '男', 'Java工程师', '全职', '张三', 'http://opb0odz3w.bkt.clouddn.com/Fmdf3LvQJIQ6awgu22TJ4Shbh__2', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('2', '23', '1366426163@qq.com', '男', 'web工程师', '全职', '张三', 'http://opb0odz3w.bkt.clouddn.com/Fmdf3LvQJIQ6awgu22TJ4Shbh__2', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('3', '23', '1366426163@qq.com', '男', 'iOS 工程师', '全职', '张三', 'http://opb0odz3w.bkt.clouddn.com/Fmdf3LvQJIQ6awgu22TJ4Shbh__2', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('4', '23', '1095005778@qq.com', '女', 'Java', '全职', '萌萌', 'http://opb0odz3w.bkt.clouddn.com/FqNv6Bjedz_Xod8uyH_BsB79eSMw', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('5', '23', '2516426163@qq.com', '男', 'Java工程师', '全职', '张强', 'http://opb0odz3w.bkt.clouddn.com/FvNsTIqHdKDpRip8BOEKLezLrL1F', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('6', '23', '1095005778@qq.com', '女', 'Java', '兼职', '萌萌', 'http://opb0odz3w.bkt.clouddn.com/FqNv6Bjedz_Xod8uyH_BsB79eSMw', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('7', '23', '1095005778@qq.com', '女', 'web', '兼职', '萌萌', 'http://opb0odz3w.bkt.clouddn.com/FqNv6Bjedz_Xod8uyH_BsB79eSMw', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('8', '22', '1906426163@qq.com', '男', '网站内容总监', '全职', '王自强', 'http://opb0odz3w.bkt.clouddn.com/FvNsTIqHdKDpRip8BOEKLezLrL1F', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('9', '28', '9106866163@qq.com', '男', '广告运营总监', '全职', '杨丰智', 'http://opb0odz3w.bkt.clouddn.com/FvNsTIqHdKDpRip8BOEKLezLrL1F', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('10', '25', '1095005778@qq.com', '女', 'web', '全职', '晓丽', 'http://opb0odz3w.bkt.clouddn.com/FpZTAjX0mD5W9MLoj2BVt6nbcDlr', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('11', '25', '1095005778@qq.com', '女', 'java', '兼职', '晓丽', 'http://opb0odz3w.bkt.clouddn.com/FpZTAjX0mD5W9MLoj2BVt6nbcDlr', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('12', '30', '1095005778@qq.com', '女', 'java', '兼职', '梁凌', 'http://opb0odz3w.bkt.clouddn.com/FpBDS-amUl4IRdijStmUgYeVeTlK', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('13', '30', '1095005778@qq.com', '女', 'java', '全职', '梁凌', 'http://opb0odz3w.bkt.clouddn.com/FpBDS-amUl4IRdijStmUgYeVeTlK', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('14', '30', '1095005778@qq.com', '女', 'WEB', '全职', '梁凌', 'http://opb0odz3w.bkt.clouddn.com/FpBDS-amUl4IRdijStmUgYeVeTlK', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('15', '30', '1095005778@qq.com', '男', 'WEB', '全职', '张海华', 'http://opb0odz3w.bkt.clouddn.com/Fj58K2DeQLCH_SKYB1lzRmZAPURh', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('16', '30', '1095005778@qq.com', '男', 'iOS', '兼职', '张海华', 'http://opb0odz3w.bkt.clouddn.com/Fj58K2DeQLCH_SKYB1lzRmZAPURh', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('17', '30', '1095005778@qq.com', '男', '项目经理', '全职', '张海华', 'http://opb0odz3w.bkt.clouddn.com/Fj58K2DeQLCH_SKYB1lzRmZAPURh', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('18', '27', '1095005778@qq.com', '女', '项目经理', '全职', '琳达', 'http://opb0odz3w.bkt.clouddn.com/Fs0eMYsCS2I773ZMaQ5o1Ss9mLck', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('19', '27', '1095005778@qq.com', '女', 'Java', '全职', '琳达', 'http://opb0odz3w.bkt.clouddn.com/Fs0eMYsCS2I773ZMaQ5o1Ss9mLck', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('20', '30', '1095005778@qq.com', '女', 'WEB', '全职', '梁凌', 'http://opb0odz3w.bkt.clouddn.com/FpBDS-amUl4IRdijStmUgYeVeTlK', '我是一只勤劳的小蜜蜂');
+INSERT INTO `hunter_information` VALUES ('21', '23', '1366426163@qq.com', '男', 'Java，web', '全职', '李四', 'http://opb0odz3w.bkt.clouddn.com/FqGOW89uYSoq6SUEF803aqqijqxL', null);
+
+-- ----------------------------
+-- Table structure for hunter_resume
+-- ----------------------------
+DROP TABLE IF EXISTS `hunter_resume`;
+CREATE TABLE `hunter_resume` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hunter_accountid` int(11) NOT NULL,
+  `hunter_information_id` int(11) DEFAULT NULL,
+  `hunter_count` int(64) unsigned zerofill DEFAULT NULL,
+  `create_date` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKlh1ub740l4gav41iuesenxtqo` (`hunter_information_id`),
+  CONSTRAINT `FKlh1ub740l4gav41iuesenxtqo` FOREIGN KEY (`hunter_information_id`) REFERENCES `hunter_information` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of hunter_resume
+-- ----------------------------
+INSERT INTO `hunter_resume` VALUES ('1', '1', '1', '0000000000000000000000000000000000000000000000000000000000000012', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('2', '1', '2', '0000000000000000000000000000000000000000000000000000000000000002', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('3', '1', '3', '0000000000000000000000000000000000000000000000000000000000000003', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('4', '11', '4', '0000000000000000000000000000000000000000000000000000000000000004', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('5', '1', '5', '0000000000000000000000000000000000000000000000000000000000000005', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('6', '11', '6', '0000000000000000000000000000000000000000000000000000000000000006', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('7', '11', '7', '0000000000000000000000000000000000000000000000000000000000000007', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('8', '1', '8', '0000000000000000000000000000000000000000000000000000000000000008', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('9', '1', '9', '0000000000000000000000000000000000000000000000000000000000000009', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('10', '12', '10', '0000000000000000000000000000000000000000000000000000000000000011', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('11', '12', '11', '0000000000000000000000000000000000000000000000000000000000000012', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('12', '13', '12', '0000000000000000000000000000000000000000000000000000000000000013', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('13', '13', '13', '0000000000000000000000000000000000000000000000000000000000000014', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('14', '13', '14', '0000000000000000000000000000000000000000000000000000000000000015', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('15', '14', '15', '0000000000000000000000000000000000000000000000000000000000000016', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('16', '14', '16', '0000000000000000000000000000000000000000000000000000000000000017', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('17', '14', '17', '0000000000000000000000000000000000000000000000000000000000000018', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('18', '15', '18', '0000000000000000000000000000000000000000000000000000000000000019', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('19', '15', '19', '0000000000000000000000000000000000000000000000000000000000000020', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('20', '15', '20', '0000000000000000000000000000000000000000000000000000000000000021', '2016-12-20 10:20:20');
+INSERT INTO `hunter_resume` VALUES ('21', '5', '21', '0000000000000000000000000000000000000000000000000000000000000000', '2017-05-07 12:02:22');
+
+-- ----------------------------
+-- Table structure for hunter_resume_hunter_capacity_desc_list
+-- ----------------------------
+DROP TABLE IF EXISTS `hunter_resume_hunter_capacity_desc_list`;
+CREATE TABLE `hunter_resume_hunter_capacity_desc_list` (
+  `hunter_resume_id` int(11) NOT NULL,
+  `hunter_capacity_desc_list_id` int(11) NOT NULL,
+  UNIQUE KEY `UK_lug573t3gsl2rphq66iwxn8qn` (`hunter_capacity_desc_list_id`),
+  KEY `FKduuvqsswohhf7eth9ir9cbdfw` (`hunter_resume_id`),
+  CONSTRAINT `FKduuvqsswohhf7eth9ir9cbdfw` FOREIGN KEY (`hunter_resume_id`) REFERENCES `hunter_resume` (`id`),
+  CONSTRAINT `FKjc2bu6lxqmglh210ens87uh1n` FOREIGN KEY (`hunter_capacity_desc_list_id`) REFERENCES `hunter_capacity_desc` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of hunter_resume_hunter_capacity_desc_list
+-- ----------------------------
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('1', '1');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('1', '2');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('1', '3');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('1', '4');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('1', '5');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('2', '6');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('2', '7');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('2', '8');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('2', '9');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('2', '10');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('3', '11');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('3', '12');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('3', '13');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('3', '14');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('3', '15');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('4', '16');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('4', '17');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('4', '18');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('4', '19');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('4', '20');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('5', '21');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('5', '22');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('5', '23');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('5', '24');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('5', '25');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('6', '26');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('6', '27');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('6', '28');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('6', '29');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('6', '30');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('7', '31');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('7', '32');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('7', '33');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('7', '34');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('7', '35');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('8', '36');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('8', '37');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('8', '38');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('8', '39');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('8', '40');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('9', '41');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('9', '42');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('9', '43');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('9', '44');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('9', '45');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('10', '46');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('10', '47');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('10', '48');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('10', '49');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('10', '50');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('11', '51');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('11', '52');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('11', '53');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('11', '54');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('11', '55');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('12', '56');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('12', '57');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('12', '58');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('12', '59');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('12', '60');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('13', '61');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('13', '62');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('13', '63');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('13', '64');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('13', '65');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('14', '66');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('14', '67');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('14', '68');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('14', '69');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('14', '70');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('15', '71');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('15', '72');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('15', '73');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('15', '74');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('15', '75');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('16', '76');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('16', '77');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('16', '78');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('16', '79');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('16', '80');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('17', '81');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('17', '82');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('17', '83');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('17', '84');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('17', '85');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('18', '86');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('18', '87');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('18', '88');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('18', '89');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('18', '90');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('19', '91');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('19', '92');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('19', '93');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('19', '94');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('19', '95');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('20', '96');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('20', '97');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('20', '98');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('20', '99');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('20', '100');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('21', '101');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('21', '102');
+INSERT INTO `hunter_resume_hunter_capacity_desc_list` VALUES ('21', '103');
+
+-- ----------------------------
+-- Table structure for hunter_resume_hunter_education
+-- ----------------------------
+DROP TABLE IF EXISTS `hunter_resume_hunter_education`;
+CREATE TABLE `hunter_resume_hunter_education` (
+  `hunter_resume_id` int(11) NOT NULL,
+  `hunter_education_id` int(11) NOT NULL,
+  UNIQUE KEY `UK_tgvrq0kyhpqc389glym8g0y55` (`hunter_education_id`),
+  KEY `FK1lemobt7v15mep919ju7lrys5` (`hunter_resume_id`),
+  CONSTRAINT `FK1lemobt7v15mep919ju7lrys5` FOREIGN KEY (`hunter_resume_id`) REFERENCES `hunter_resume` (`id`),
+  CONSTRAINT `FKfkr49w61w0cr5q8mmh5v3neek` FOREIGN KEY (`hunter_education_id`) REFERENCES `hunter_education` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of hunter_resume_hunter_education
+-- ----------------------------
+INSERT INTO `hunter_resume_hunter_education` VALUES ('1', '1');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('1', '2');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('2', '3');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('2', '4');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('3', '5');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('3', '6');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('4', '7');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('4', '8');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('5', '9');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('5', '10');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('6', '11');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('6', '12');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('7', '13');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('7', '14');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('8', '15');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('8', '16');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('9', '17');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('9', '18');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('10', '19');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('10', '20');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('11', '21');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('11', '22');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('12', '23');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('12', '24');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('13', '25');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('13', '26');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('14', '27');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('14', '28');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('15', '29');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('15', '30');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('16', '31');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('16', '32');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('17', '33');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('17', '34');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('18', '35');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('18', '36');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('19', '37');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('19', '38');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('20', '39');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('20', '40');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('21', '41');
+INSERT INTO `hunter_resume_hunter_education` VALUES ('21', '42');
+
+-- ----------------------------
+-- Table structure for my_message
+-- ----------------------------
+DROP TABLE IF EXISTS `my_message`;
+CREATE TABLE `my_message` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cover` varchar(255) DEFAULT NULL,
+  `hunterid` int(11) NOT NULL,
+  `message_date` varchar(255) DEFAULT NULL,
+  `message_type` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `positionid` int(11) NOT NULL,
+  `position_name` varchar(255) DEFAULT NULL,
+  `recruiterid` int(11) NOT NULL,
+  `resumeid` int(11) NOT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `hunter_name` varchar(255) DEFAULT NULL,
+  `company_cover` varchar(255) DEFAULT NULL,
+  `hunter_cover` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of my_message
+-- ----------------------------
+INSERT INTO `my_message` VALUES ('10', 'cover image', '3', '2017-05-07 13:13:48', 'sendInvite', '阿里巴巴', '2', 'java工程师', '2', '1', null, null, null, null);
+INSERT INTO `my_message` VALUES ('11', 'cover image', '3', '2017-05-07 13:13:52', 'sendResume', '阿里巴巴', '2', 'java工程师', '3', '1', null, null, null, null);
+INSERT INTO `my_message` VALUES ('12', 'cover image', '3', '2017-05-07 13:14:05', 'sendResume', '阿里巴巴', '2', 'java工程师', '3', '1', null, null, null, null);
+INSERT INTO `my_message` VALUES ('13', 'cover image', '3', '2017-05-07 13:14:22', 'sendInvite', '阿里巴巴', '2', 'java工程师', '2', '1', null, null, null, null);
+INSERT INTO `my_message` VALUES ('14', 'cover image', '3', '2017-05-07 13:14:42', 'sendResume', '阿里巴巴', '2', 'java工程师', '3', '1', null, null, null, null);
+INSERT INTO `my_message` VALUES ('15', 'cover image', '3', '2017-05-07 13:14:50', 'sendInvite', '阿里巴巴', '2', 'java工程师', '2', '1', null, null, null, null);
+INSERT INTO `my_message` VALUES ('16', 'cover image', '3', '2017-05-07 13:16:31', 'sendInvite', '阿里巴巴', '2', 'java工程师', '2', '1', null, null, null, null);
+INSERT INTO `my_message` VALUES ('17', 'cover image', '3', '2017-05-07 13:16:36', 'sendResume', '阿里巴巴', '2', 'java工程师', '3', '1', null, null, null, null);
+INSERT INTO `my_message` VALUES ('18', 'cover image', '3', '2017-05-08 17:46:57', 'sendResume', '阿里巴巴', '2', 'java工程师', '3', '1', null, null, null, null);
+INSERT INTO `my_message` VALUES ('19', 'cover image', '3', '2017-05-08 18:16:13', 'sendResume', null, '2', 'java工程师', '3', '1', '阿里巴巴', '张三', null, null);
+INSERT INTO `my_message` VALUES ('20', null, '3', '2017-05-08 18:28:30', 'sendResume', null, '2', 'java工程师', '3', '1', '阿里巴巴', '张三', 'company cover', 'hunter cover');
+
+-- ----------------------------
+-- Table structure for recruiter_account
+-- ----------------------------
+DROP TABLE IF EXISTS `recruiter_account`;
+CREATE TABLE `recruiter_account` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `head_image` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `recruiter_account` varchar(255) DEFAULT NULL,
+  `token_key` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of recruiter_account
+-- ----------------------------
+INSERT INTO `recruiter_account` VALUES ('1', 'http://opb0odz3w.bkt.clouddn.com/Fg_ENwA4FW8qQqT6F780KlPvbrGo', '许展', 'e10adc3949ba59abbe56e057f20f883e', 'recruit4', 'df6d676f3a6f42d5208ae2816e74cb43');
+INSERT INTO `recruiter_account` VALUES ('2', 'http://opb0odz3w.bkt.clouddn.com/FidwP3aAKekn5TIP9bSwFk93OPOX', '王明', 'e10adc3949ba59abbe56e057f20f883e', 'recruit5', 'c611b273176b845dba176b7a98807975');
+INSERT INTO `recruiter_account` VALUES ('3', 'http://opb0odz3w.bkt.clouddn.com/FgpzVDk5urxZN9BI3wKoGAcKpUP6', '魏玲', 'e10adc3949ba59abbe56e057f20f883e', 'recruit6', '12160056f9dd069af1a7581a47be9112');
+INSERT INTO `recruiter_account` VALUES ('4', 'http://opb0odz3w.bkt.clouddn.com/FjPJ713UVgeUkiQv7VxiRScAdcZV', '刘宇', 'e10adc3949ba59abbe56e057f20f883e', 'recruit7', 'fadf9c7367025df95437384443fd5b70');
+INSERT INTO `recruiter_account` VALUES ('5', 'http://opb0odz3w.bkt.clouddn.com/FhGQFNNNsVhP_X4iyLYAH5IEI_dQ', '汪大傻', 'e10adc3949ba59abbe56e057f20f883e', 'recruit8', 'f7d2debfdef31300ce3173cfc5478c85');
+INSERT INTO `recruiter_account` VALUES ('6', 'http://opb0odz3w.bkt.clouddn.com/FnZkDPBs7MwcH9ODu1dZKz7752jL', '李四', 'e10adc3949ba59abbe56e057f20f883e', 'recruit9', 'cb42099769ae214a3ecd4eaa276d08e8');
+INSERT INTO `recruiter_account` VALUES ('7', 'http://opb0odz3w.bkt.clouddn.com/Fk_11kecJVdjkUU6nETP7P25D4OZ', '郑晚', 'e10adc3949ba59abbe56e057f20f883e', 'recruit10', 'b963ea7ec84b658d41dd1c3c42897941');
+INSERT INTO `recruiter_account` VALUES ('8', 'http://opb0odz3w.bkt.clouddn.com/FiitDv2zD8-JjRROi13Lz9j0Rg0q', '徐小龙', 'e10adc3949ba59abbe56e057f20f883e', 'recruit11', '54f352ef665f2f31982ddb38848f025e');
+INSERT INTO `recruiter_account` VALUES ('9', 'http://opb0odz3w.bkt.clouddn.com/Fk0mmsyeUoAt1lbMrbdNNJ3sn7YX', '崔祥', 'e10adc3949ba59abbe56e057f20f883e', 'recruit12', '9f9ae92e8b4bb0ad80d77c028bd4b484');
+INSERT INTO `recruiter_account` VALUES ('10', 'http://opb0odz3w.bkt.clouddn.com/FlLdNnlAbBA_9L29laZ2GAtLD1HE', '彭余洋', 'e10adc3949ba59abbe56e057f20f883e', 'recruit13', 'e26d05f31a6d7c588d41a07415aa9ae2');
+INSERT INTO `recruiter_account` VALUES ('11', 'http://opb0odz3w.bkt.clouddn.com/FjOAdeJ6EGMTIcjQ1cAOhaG0_Cad', '刘谦', 'e10adc3949ba59abbe56e057f20f883e', 'recruit14', '46636d57c8ae72ca212dde88d473c630');
+INSERT INTO `recruiter_account` VALUES ('12', 'http://opb0odz3w.bkt.clouddn.com/Fsdw0_Yy7BQplKvLvQLdcI7hWSTX', '刘衣', 'e10adc3949ba59abbe56e057f20f883e', 'recruit15', '3c6d86d391485197c301b85052bfaec3');
+INSERT INTO `recruiter_account` VALUES ('13', 'http://opb0odz3w.bkt.clouddn.com/FmPbwlJPcXHO59soNoEj_scDsMmb', '白岩', 'e10adc3949ba59abbe56e057f20f883e', 'recruit16', '4cfeab1ae9f554d1390f1ec15452f546');
+INSERT INTO `recruiter_account` VALUES ('14', 'http://opb0odz3w.bkt.clouddn.com/Fq59SzfUbTac6PKprq9rCseYpALC', '何方', 'e10adc3949ba59abbe56e057f20f883e', 'recruit17', '22d4e7e84316fac23b8ac97d1fc17488');
+INSERT INTO `recruiter_account` VALUES ('15', 'http://opb0odz3w.bkt.clouddn.com/Fp7r54tFxJJPEXJD5JzjFSVuFRLI', '婉婉', 'e10adc3949ba59abbe56e057f20f883e', 'recruit18', '79fdbfc250e3e5e4e9ccf385af025e85');
+INSERT INTO `recruiter_account` VALUES ('16', 'http://FtmjVVWnzwV4KObSEvHfDaS4rlxT', 'Sdf', 'e10adc3949ba59abbe56e057f20f883e', 'recruiter19', '7844d475fdbfd3b2ad97a354e7d421a8');
+INSERT INTO `recruiter_account` VALUES ('17', 'http://FtmjVVWnzwV4KObSEvHfDaS4rlxT', 'Qw', 'e10adc3949ba59abbe56e057f20f883e', 'recruiter20', '2ccf1ecfdeeba97c9be3269f908cd0fe');
+
+-- ----------------------------
+-- Table structure for recruiter_company_info
+-- ----------------------------
+DROP TABLE IF EXISTS `recruiter_company_info`;
+CREATE TABLE `recruiter_company_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_address` varchar(255) DEFAULT NULL,
+  `company_eamil` varchar(255) DEFAULT NULL,
+  `company_image` varchar(255) DEFAULT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `declarations` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of recruiter_company_info
+-- ----------------------------
+INSERT INTO `recruiter_company_info` VALUES ('1', '北京三环二路', 'tengxun@qq.com', 'http://opb0odz3w.bkt.clouddn.com/Fmdf3LvQJIQ6awgu22TJ4Shbh__2', '腾讯公司', '不花钱还想玩游戏？');
+INSERT INTO `recruiter_company_info` VALUES ('2', '北京三环二路', 'tengxun@qq.com', 'http://opb0odz3w.bkt.clouddn.com/Fmdf3LvQJIQ6awgu22TJ4Shbh__2', '腾讯公司', '不花钱还想玩游戏？');
+INSERT INTO `recruiter_company_info` VALUES ('3', '北京三环二路', 'tengxun@qq.com', 'http://opb0odz3w.bkt.clouddn.com/Fu6vgVyEiyUK54E5CF3naK5VsEmS', '阿里巴巴公司', '不花钱还想玩游戏？');
+INSERT INTO `recruiter_company_info` VALUES ('4', '杭州文一西路969号 ', 'tengxun@qq.com', 'http://opb0odz3w.bkt.clouddn.com/Fu6vgVyEiyUK54E5CF3naK5VsEmS', '阿里巴巴公司', '努力吧，青春！');
+INSERT INTO `recruiter_company_info` VALUES ('5', '杭州文一西路969号 ', 'tengxun@qq.com', 'http://opb0odz3w.bkt.clouddn.com/Fu6vgVyEiyUK54E5CF3naK5VsEmS', '阿里巴巴公司', '努力吧，青春！');
+INSERT INTO `recruiter_company_info` VALUES ('6', '上海汇联路33路 ', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/Fr1G8IzPvUtFDdnOtuBlISDsyA9Q', '汉德公司', '挥洒着汗水，释放青春！');
+INSERT INTO `recruiter_company_info` VALUES ('7', '崇明县长兴镇潘园公路38号 ', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FsCbK_4pcexiXjdKAF4CArUTF3mk', '上海的狸网络科技有限公司', '挥洒着汗水，释放青春！');
+INSERT INTO `recruiter_company_info` VALUES ('8', '上海市闵行区联航路1518号', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FgjdnBXGwJvYvGnmRAL8Sk1QBMdi', '万达信息股份有限公司', '挥洒着汗水，释放青春！');
+INSERT INTO `recruiter_company_info` VALUES ('9', '上海市闵行区联航路1518号', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FgjdnBXGwJvYvGnmRAL8Sk1QBMdi', '万达信息股份有限公司', '挥洒着汗水，释放青春！');
+INSERT INTO `recruiter_company_info` VALUES ('10', '上海市闵行区联航路1518号', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FgjdnBXGwJvYvGnmRAL8Sk1QBMdi', '万达信息股份有限公司', '挥洒着汗水，释放青春！');
+INSERT INTO `recruiter_company_info` VALUES ('11', '杭州市西湖区西湖科技园西园八路11号B座5楼', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FvdftfZbGaIJJ4zCRioawTEKOxaA', '四喜', '为客户所想，走成功之路！');
+INSERT INTO `recruiter_company_info` VALUES ('12', '杭州市西湖区西湖科技园西园八路11号B座5楼', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FvdftfZbGaIJJ4zCRioawTEKOxaA', '四喜', '为客户所想，走成功之路！');
+INSERT INTO `recruiter_company_info` VALUES ('13', '杭州市西湖区西湖科技园西园八路11号B座5楼', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FvdftfZbGaIJJ4zCRioawTEKOxaA', '四喜', '为客户所想，走成功之路！');
+INSERT INTO `recruiter_company_info` VALUES ('14', '杭州滨江区万轮科技园', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FgHoPpxGrByK4vw2ha0ku2udSCxl', '浙江宇视科技有限公司', '为客户所想，走成功之路！');
+INSERT INTO `recruiter_company_info` VALUES ('15', '杭州滨江区万轮科技园', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FgHoPpxGrByK4vw2ha0ku2udSCxl', '浙江宇视科技有限公司', '为客户所想，走成功之路！');
+INSERT INTO `recruiter_company_info` VALUES ('16', '解放中路白云商厦2单元15楼', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FgTrBWFfLO0peNLKGfv5O2zZj_oH', '安徽网新科技有限公司', '安徽网新是目前安徽提供企业网络营销服务最专业、最专注的行业领袖公司！');
+INSERT INTO `recruiter_company_info` VALUES ('17', '解放中路白云商厦2单元15楼', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FgTrBWFfLO0peNLKGfv5O2zZj_oH', '安徽网新科技有限公司', '安徽网新是目前安徽提供企业网络营销服务最专业、最专注的行业领袖公司！');
+INSERT INTO `recruiter_company_info` VALUES ('18', '北京市亦庄总部', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FoGuBWXuHFO6RFvay4R8P3Sqlpfc', '京东商城', '行动吧！');
+INSERT INTO `recruiter_company_info` VALUES ('19', '北京市亦庄总部', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FoGuBWXuHFO6RFvay4R8P3Sqlpfc', '京东商城', '行动吧！');
+INSERT INTO `recruiter_company_info` VALUES ('20', '北京市亦庄总部', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FoGuBWXuHFO6RFvay4R8P3Sqlpfc', '京东商城', '行动吧！');
+INSERT INTO `recruiter_company_info` VALUES ('21', '芜湖市鸠区广告产业园C区一楼', '1134965175@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FkNZ-YADaMeMfD6FICbaQVQeV7KB', '芜湖摩灿智能科技有限公司', '不花钱还想玩游戏？');
+INSERT INTO `recruiter_company_info` VALUES ('22', '芜湖市鸠区广告产业园C区一楼', '1134965175@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FkNZ-YADaMeMfD6FICbaQVQeV7KB', '芜湖摩灿智能科技有限公司', '不花钱还想玩游戏？');
+INSERT INTO `recruiter_company_info` VALUES ('23', '北京市海淀区中关村软件园区', '1134965175@qq.com', 'http://opb0odz3w.bkt.clouddn.com/Fk0RBEJw_pVOdBs4MCLaHcs4oh-- ', '北京荣新广育科技有限公司', '不花钱还想玩游戏？');
+INSERT INTO `recruiter_company_info` VALUES ('24', '北京市海淀区中关村软件园区', '1134965175@qq.com', 'http://opb0odz3w.bkt.clouddn.com/Fk0RBEJw_pVOdBs4MCLaHcs4oh-- ', '北京荣新广育科技有限公司', '不花钱还想玩游戏？');
+INSERT INTO `recruiter_company_info` VALUES ('25', '北京市海淀区中关村软件园区', '1134965175@qq.com', 'http://opb0odz3w.bkt.clouddn.com/Fk0RBEJw_pVOdBs4MCLaHcs4oh-- ', '北京荣新广育科技有限公司', '不花钱还想玩游戏？');
+INSERT INTO `recruiter_company_info` VALUES ('26', '北京市海淀区中关村软件园5号楼', '1134965175@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FlwjFJneay28j6R14VZr_eOYRyjm', '中软开创（北京）科技有限公司', '不花钱还想玩游戏？');
+INSERT INTO `recruiter_company_info` VALUES ('27', '北京市海淀区中关村软件园5号楼', '1134965175@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FlwjFJneay28j6R14VZr_eOYRyjm', '中软开创（北京）科技有限公司', '不花钱还想玩游戏？');
+INSERT INTO `recruiter_company_info` VALUES ('28', '北京市海淀区中关村软件园5号楼', '1134965175@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FlwjFJneay28j6R14VZr_eOYRyjm', '中软开创（北京）科技有限公司', '不花钱还想玩游戏？');
+INSERT INTO `recruiter_company_info` VALUES ('29', '北京市昌平区沙河高教园中国农机研究', '1134965175@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FimUqZiw-4kL8zvW8QiFGSPEpEPc', '北京蓝色曙光信息技术有限公司', '不花钱还想玩游戏？');
+INSERT INTO `recruiter_company_info` VALUES ('30', '北京市昌平区沙河高教园中国农机研究', '1134965175@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FimUqZiw-4kL8zvW8QiFGSPEpEPc', '北京蓝色曙光信息技术有限公司', '不花钱还想玩游戏？');
+INSERT INTO `recruiter_company_info` VALUES ('31', '鹏兴路鹏基莲塘工业区', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FhB0QaM_0oLRPn3L0CIXK9ojmD11', '广东一点到网络科技有限公司', '行动吧！');
+INSERT INTO `recruiter_company_info` VALUES ('32', '鹏兴路鹏基莲塘工业区', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FhB0QaM_0oLRPn3L0CIXK9ojmD11', '广东一点到网络科技有限公司', '行动吧！');
+INSERT INTO `recruiter_company_info` VALUES ('33', '深圳市南山区高新南一道赋', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FhB0QaM_0oLRPn3L0CIXK9ojmD11', '深圳市深网视界科技有限公司', '行动吧！');
+INSERT INTO `recruiter_company_info` VALUES ('34', '深圳市南山区高新南一道赋', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FhB0QaM_0oLRPn3L0CIXK9ojmD11', '深圳市深网视界科技有限公司', '行动吧！');
+INSERT INTO `recruiter_company_info` VALUES ('35', '深圳市南山区高新南一道赋', '1962188798@qq.com', 'http://opb0odz3w.bkt.clouddn.com/FhB0QaM_0oLRPn3L0CIXK9ojmD11', '深圳市深网视界科技有限公司', '行动吧！');
+INSERT INTO `recruiter_company_info` VALUES ('36', '北京三环二路', 'tengxun@qq.com', 'http://opb0odz3w.bkt.clouddn.com/Fmdf3LvQJIQ6awgu22TJ4Shbh__2', '腾讯公司', '不花钱还想玩游戏？');
+
+-- ----------------------------
+-- Table structure for recruiter_information
+-- ----------------------------
+DROP TABLE IF EXISTS `recruiter_information`;
+CREATE TABLE `recruiter_information` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `city` varchar(255) DEFAULT NULL,
+  `experience_time` varchar(255) DEFAULT NULL,
+  `job_nature` varchar(255) DEFAULT NULL,
+  `position_name` varchar(255) DEFAULT NULL,
+  `qualifications` varchar(255) DEFAULT NULL,
+  `salary` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of recruiter_information
+-- ----------------------------
+INSERT INTO `recruiter_information` VALUES ('1', '北京', '3年', '兼职', 'java工程师', '本科', '2000');
+INSERT INTO `recruiter_information` VALUES ('2', '北京', '3年', '兼职', 'web工程师', '本科', '2000');
+INSERT INTO `recruiter_information` VALUES ('3', '北京', '3年', '兼职', 'java工程师', '本科', '2000');
+INSERT INTO `recruiter_information` VALUES ('4', '杭州', '3年', '全职', 'web工程师', '本科', '4000');
+INSERT INTO `recruiter_information` VALUES ('5', '杭州', '3年', '全职', 'web工程师', '硕士', '4000');
+INSERT INTO `recruiter_information` VALUES ('6', '上海', '3年', '全职', 'web工程师', '硕士', '4000');
+INSERT INTO `recruiter_information` VALUES ('7', '上海', '5年', '兼职', 'ios高级开发工程师', '本科', '9000');
+INSERT INTO `recruiter_information` VALUES ('8', '上海', '5年', '全职', 'ios高级开发工程师', '本科', '9000');
+INSERT INTO `recruiter_information` VALUES ('9', '上海', '3年', '全职', 'java高级开发工程师', '本科', '9000');
+INSERT INTO `recruiter_information` VALUES ('10', '上海', '3年', '全职', '产品实施工程师', '大专', '9000');
+INSERT INTO `recruiter_information` VALUES ('11', '杭州', '3年', '全职', 'java高级工程师', '本科', '10000');
+INSERT INTO `recruiter_information` VALUES ('12', '杭州', '3年', '全职', 'java高级工程师', '本科', '25000');
+INSERT INTO `recruiter_information` VALUES ('13', '杭州', '7年', '全职', '架构工程师', '本科', '25000');
+INSERT INTO `recruiter_information` VALUES ('14', '杭州', '7年', '全职', 'C# ', '本科', '25000');
+INSERT INTO `recruiter_information` VALUES ('15', '杭州', '7年', '全职', '通信技术工程师', '本科', '8000');
+INSERT INTO `recruiter_information` VALUES ('16', '六安', '3年', '全职', '美工设计', '本科', '8000');
+INSERT INTO `recruiter_information` VALUES ('17', '亳州', '3年', '全职', '网络客服', '本科', '4000');
+INSERT INTO `recruiter_information` VALUES ('18', '亳州', '3年', '全职', '网络客服', '本科', '4000');
+INSERT INTO `recruiter_information` VALUES ('19', '北京', '3年', '全职', 'java开发', '本科', '4000');
+INSERT INTO `recruiter_information` VALUES ('20', '北京', '3年', '全职', '产品经理 ', '本科', '15000');
+INSERT INTO `recruiter_information` VALUES ('21', '北京', '3年', '兼职', 'java工程师', '本科', '2000');
+INSERT INTO `recruiter_information` VALUES ('22', '北京', '1-3年', '全职', 'Android工程师', '本科', '5000');
+INSERT INTO `recruiter_information` VALUES ('23', '北京', '无要求', '实习生', 'JAVA工程师', '大专', '3000');
+INSERT INTO `recruiter_information` VALUES ('24', '北京', '3年', '全职', 'Java大数据工程师', '本科', '8000');
+INSERT INTO `recruiter_information` VALUES ('25', '北京', '1年', '全职', '技术支持/维护', '本科', '2600');
+INSERT INTO `recruiter_information` VALUES ('26', '北京', '2年', '全职', 'Java开发工程师', '本科', '6000-8000');
+INSERT INTO `recruiter_information` VALUES ('27', '北京', '2年', '全职', 'web开发工程师', '本科', '6000-8000');
+INSERT INTO `recruiter_information` VALUES ('28', '北京', '2年', '全职', '软件工程师', '本科', '6000-8000');
+INSERT INTO `recruiter_information` VALUES ('29', '北京', '2年', '全职', '云计算大数据实习生', '本科', '5000-8000');
+INSERT INTO `recruiter_information` VALUES ('30', '北京', '无', '全职', '网络与信息安全工程师', '本科', '2000');
+INSERT INTO `recruiter_information` VALUES ('31', '深圳', '5年', '全职', 'java高级开发工程师', '本科', '20000');
+INSERT INTO `recruiter_information` VALUES ('32', '深圳', '5年', '全职', '技术经理', '本科', '18000');
+INSERT INTO `recruiter_information` VALUES ('33', '深圳', '5年', '全职', 'C++开发工程师', '本科', '18000');
+INSERT INTO `recruiter_information` VALUES ('34', '深圳', '5年', '全职', '嵌入式linux软件工程师', '本科', '25000');
+INSERT INTO `recruiter_information` VALUES ('35', '深圳', '5年', '全职', '算法优化工程师', '本科', '20000');
+INSERT INTO `recruiter_information` VALUES ('36', '北京', '3年', '兼职', 'java工程师', '本科', '2000');
+
+-- ----------------------------
+-- Table structure for recruiter_position
+-- ----------------------------
+DROP TABLE IF EXISTS `recruiter_position`;
+CREATE TABLE `recruiter_position` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `recruiter_accountid` int(11) NOT NULL,
+  `recruiter_company_info_id` int(11) DEFAULT NULL,
+  `recruiter_information_id` int(11) DEFAULT NULL,
+  `recruiter_count` int(64) DEFAULT NULL,
+  `create_date` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKjialiobd7nwtbbdodgva6pq9e` (`recruiter_company_info_id`),
+  KEY `FKqrafupjy674csjiw7q5dk3qqc` (`recruiter_information_id`),
+  CONSTRAINT `FKjialiobd7nwtbbdodgva6pq9e` FOREIGN KEY (`recruiter_company_info_id`) REFERENCES `recruiter_company_info` (`id`),
+  CONSTRAINT `FKqrafupjy674csjiw7q5dk3qqc` FOREIGN KEY (`recruiter_information_id`) REFERENCES `recruiter_information` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of recruiter_position
+-- ----------------------------
+INSERT INTO `recruiter_position` VALUES ('1', '1', '1', '1', '1', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('2', '1', '2', '2', '5', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('3', '1', '3', '3', '3', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('4', '2', '4', '4', '4', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('5', '2', '5', '5', '5', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('6', '2', '6', '6', '6', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('7', '3', '7', '7', '7', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('8', '4', '8', '8', '8', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('9', '4', '9', '9', '9', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('10', '4', '10', '10', '10', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('11', '5', '11', '11', '11', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('12', '5', '12', '12', '12', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('13', '5', '13', '13', '13', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('14', '6', '14', '14', '14', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('15', '6', '15', '15', '15', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('16', '7', '16', '16', '16', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('17', '7', '17', '17', '17', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('18', '8', '18', '18', '18', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('19', '8', '19', '19', '19', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('20', '8', '20', '20', '20', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('21', '12', '21', '21', '21', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('22', '12', '22', '22', '22', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('23', '13', '23', '23', '23', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('24', '13', '24', '24', '24', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('25', '13', '25', '25', '25', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('26', '14', '26', '26', '26', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('27', '14', '27', '27', '27', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('28', '14', '28', '28', '28', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('29', '15', '29', '29', '29', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('30', '15', '30', '30', '30', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('31', '9', '31', '31', '31', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('32', '9', '32', '32', '32', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('33', '10', '33', '33', '33', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('34', '10', '34', '34', '34', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('35', '10', '35', '35', '35', '2016-12-20 10:20:20');
+INSERT INTO `recruiter_position` VALUES ('36', '7', '36', '36', '0', '2017-05-07 12:13:11');
+
+-- ----------------------------
+-- Table structure for recruiter_position_desc
+-- ----------------------------
+DROP TABLE IF EXISTS `recruiter_position_desc`;
+CREATE TABLE `recruiter_position_desc` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `capacity_desc` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=178 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of recruiter_position_desc
+-- ----------------------------
+INSERT INTO `recruiter_position_desc` VALUES ('1', '负责协助工程师进行软件系统Java开发、调试工作');
+INSERT INTO `recruiter_position_desc` VALUES ('2', '职位描述2');
+INSERT INTO `recruiter_position_desc` VALUES ('3', '职位描述3');
+INSERT INTO `recruiter_position_desc` VALUES ('4', '职位描述4');
+INSERT INTO `recruiter_position_desc` VALUES ('5', '职位描述5');
+INSERT INTO `recruiter_position_desc` VALUES ('6', '负责协助工程师进行软件系统Java开发、调试工作');
+INSERT INTO `recruiter_position_desc` VALUES ('7', '职位描述2');
+INSERT INTO `recruiter_position_desc` VALUES ('8', '职位描述3');
+INSERT INTO `recruiter_position_desc` VALUES ('9', '职位描述4');
+INSERT INTO `recruiter_position_desc` VALUES ('10', '职位描述5');
+INSERT INTO `recruiter_position_desc` VALUES ('11', '负责app服务端及后台的设计和开发；');
+INSERT INTO `recruiter_position_desc` VALUES ('12', '参与系统设计文档的编写；');
+INSERT INTO `recruiter_position_desc` VALUES ('13', '配合测试人员完成测试工作；');
+INSERT INTO `recruiter_position_desc` VALUES ('14', '维护和升级现有软件产品和系统，快速定位并修复现有软件缺陷。');
+INSERT INTO `recruiter_position_desc` VALUES ('15', '利用HTML/CSS/JavaScript等各种Web技术进行产品的界面开发；');
+INSERT INTO `recruiter_position_desc` VALUES ('16', '设计和规划HTML5的整体架构和技术规范，并在日常开发实践中贯彻执行；');
+INSERT INTO `recruiter_position_desc` VALUES ('17', '优化代码实现，提高产品性能，改善用户体验；');
+INSERT INTO `recruiter_position_desc` VALUES ('18', '简单了解基本的JAVA/安卓/C/C++/IOS/PHP/软件测试/.net/WEB/C#/oracle/JSP/ASP/游戏开发等任意编程语言皆可。');
+INSERT INTO `recruiter_position_desc` VALUES ('19', '精通Javascript/HTML5/CSS3,熟悉W3C规范；');
+INSERT INTO `recruiter_position_desc` VALUES ('20', '至少掌握一个JS主流框架（angular/vue/react等），并了解其实现原理；');
+INSERT INTO `recruiter_position_desc` VALUES ('21', '.对前端开发规范，如工程化，模块化，组件化有深刻的认识和实践经验；');
+INSERT INTO `recruiter_position_desc` VALUES ('22', '至少参与一个以上的PC端与及移动端的web项目的开发；');
+INSERT INTO `recruiter_position_desc` VALUES ('23', '了解后台开发的web技术，以及数据库相关技术；');
+INSERT INTO `recruiter_position_desc` VALUES ('24', '精通Javascript/HTML5/CSS3,熟悉W3C规范；');
+INSERT INTO `recruiter_position_desc` VALUES ('25', '至少掌握一个JS主流框架（angular/vue/react等），并了解其实现原理；');
+INSERT INTO `recruiter_position_desc` VALUES ('26', '.对前端开发规范，如工程化，模块化，组件化有深刻的认识和实践经验；');
+INSERT INTO `recruiter_position_desc` VALUES ('27', '至少参与一个以上的PC端与及移动端的web项目的开发；');
+INSERT INTO `recruiter_position_desc` VALUES ('28', '了解后台开发的web技术，以及数据库相关技术；');
+INSERT INTO `recruiter_position_desc` VALUES ('29', '计算机/电子信息相关专业，专科或以上学历，三年以上IOS移动终端应用软件开发工作经验，至少独立开发过2个以上IOS项目；');
+INSERT INTO `recruiter_position_desc` VALUES ('30', '具备扎实的c/c++、objective c编程基础；');
+INSERT INTO `recruiter_position_desc` VALUES ('31', '深刻理解IOS的MVC结构，掌握UI编写、动态效果编写、后台任务、异步多线程处理、数据存储、网络通信等的原理，熟悉http、tcp/ip协议、json/xml通信格式；');
+INSERT INTO `recruiter_position_desc` VALUES ('32', '熟悉iOS操作系统和xcode、Instrument、CocoaPods等开发环境,精通openGL；');
+INSERT INTO `recruiter_position_desc` VALUES ('33', '.熟悉无线互联网络应用开发,精通socket和http网络接口编程。');
+INSERT INTO `recruiter_position_desc` VALUES ('34', '计算机/电子信息相关专业，专科或以上学历，三年以上IOS移动终端应用软件开发工作经验，至少独立开发过2个以上IOS项目；');
+INSERT INTO `recruiter_position_desc` VALUES ('35', '具备扎实的c/c++、objective c编程基础；');
+INSERT INTO `recruiter_position_desc` VALUES ('36', '深刻理解IOS的MVC结构，掌握UI编写、动态效果编写、后台任务、异步多线程处理、数据存储、网络通信等的原理，熟悉http、tcp/ip协议、json/xml通信格式；');
+INSERT INTO `recruiter_position_desc` VALUES ('37', '熟悉iOS操作系统和xcode、Instrument、CocoaPods等开发环境,精通openGL；');
+INSERT INTO `recruiter_position_desc` VALUES ('38', '.熟悉无线互联网络应用开发,精通socket和http网络接口编程。');
+INSERT INTO `recruiter_position_desc` VALUES ('39', '精通Java，能够使用Spring、Hibernate等技术进行快速开发；');
+INSERT INTO `recruiter_position_desc` VALUES ('40', '熟悉html、jQuery、Bootstrap等前端技术设计交互界面；');
+INSERT INTO `recruiter_position_desc` VALUES ('41', '熟悉Linux命令可以维护服务器；');
+INSERT INTO `recruiter_position_desc` VALUES ('42', ' 熟悉Nginx、Tomcat、Redis、Memcached、ActiveMQ等中间件产品的配置和开发；');
+INSERT INTO `recruiter_position_desc` VALUES ('43', '.熟悉Tomcat、Weblogic、JBoss等中间件产品的配置和开发；');
+INSERT INTO `recruiter_position_desc` VALUES ('44', '熟悉MySQL数据库，具有较好数据库设计经验和SQL优化功底。');
+INSERT INTO `recruiter_position_desc` VALUES ('45', '一年以上java/.Net开发经验,两年及以上项目实施经验，会Delphi语言优先；');
+INSERT INTO `recruiter_position_desc` VALUES ('46', '有数据库使用经验，熟悉SQL语法，熟悉oracle，mysql数据库');
+INSERT INTO `recruiter_position_desc` VALUES ('47', '负责项目现场的产品部署实施工作, 有医疗信息系统建设项目经验优先');
+INSERT INTO `recruiter_position_desc` VALUES ('48', ' 维护和完善现有的软件项目的正常运行');
+INSERT INTO `recruiter_position_desc` VALUES ('49', '良好的逻辑思维能力和沟通能力，负责项目现场的沟通交流');
+INSERT INTO `recruiter_position_desc` VALUES ('50', '工作认真负责，事业心强，创新意识强，有团队合作精神');
+INSERT INTO `recruiter_position_desc` VALUES ('51', '至少3年以上Java相关工作经验，从事过大型网站设计开发或大访问量业务开发；');
+INSERT INTO `recruiter_position_desc` VALUES ('52', '熟悉架构设计、概要设计和详细设计，独自承担过大型项目的架构设计');
+INSERT INTO `recruiter_position_desc` VALUES ('53', '有数据库使用经验，熟悉SQL语法，熟悉oracle，mysql数据库');
+INSERT INTO `recruiter_position_desc` VALUES ('54', '负责项目现场的产品部署实施工作, 有医疗信息系统建设项目经验优先');
+INSERT INTO `recruiter_position_desc` VALUES ('55', ' 维护和完善现有的软件项目的正常运行');
+INSERT INTO `recruiter_position_desc` VALUES ('56', '良好的逻辑思维能力和沟通能力，负责项目现场的沟通交流');
+INSERT INTO `recruiter_position_desc` VALUES ('57', '加分项 熟悉消息（ActiveMQ/RabbitMQ）、搜索（lucene/solr）、缓存（Redis/Memcached）技术');
+INSERT INTO `recruiter_position_desc` VALUES ('58', '7年以上开发经验，Java基础扎实，精通并发编程，掌握jvm的调优；');
+INSERT INTO `recruiter_position_desc` VALUES ('59', '3年以上架构经验，懂设计模式；深入理解Spring、Mybatis、Hibernate、Struts等框架的设计思想和实现方式，有源代码阅读经验优先，有二次开发经验优先');
+INSERT INTO `recruiter_position_desc` VALUES ('60', '精通nginx、Tomcat等主流应用服务器的配置');
+INSERT INTO `recruiter_position_desc` VALUES ('61', '有大型互联网项目的开发经验，独立负责过大型项目后台开发者，有异构系统融合经验优先，有负载均衡经验优先，有MQ、Dubbo使用经验，理解SOA、RESTful等架构思想');
+INSERT INTO `recruiter_position_desc` VALUES ('62', ' 熟悉SQL以及性能优化，熟悉Mysql、Oracle，掌握mycat的使用');
+INSERT INTO `recruiter_position_desc` VALUES ('63', '研究过 http 协议、搜索引擎solr或者elasticsearch、缓存redis、序列化、nio，有相应实践经验者优先 ');
+INSERT INTO `recruiter_position_desc` VALUES ('64', '强烈的责任心和良好的团队合作精神，乐于助人，热爱技术，对解决问题有强烈兴趣');
+INSERT INTO `recruiter_position_desc` VALUES ('65', '7年以上开发经验，Java基础扎实，精通并发编程，掌握jvm的调优；');
+INSERT INTO `recruiter_position_desc` VALUES ('66', '3年以上架构经验，懂设计模式；深入理解Spring、Mybatis、Hibernate、Struts等框架的设计思想和实现方式，有源代码阅读经验优先，有二次开发经验优先');
+INSERT INTO `recruiter_position_desc` VALUES ('67', '精通nginx、Tomcat等主流应用服务器的配置');
+INSERT INTO `recruiter_position_desc` VALUES ('68', '有大型互联网项目的开发经验，独立负责过大型项目后台开发者，有异构系统融合经验优先，有负载均衡经验优先，有MQ、Dubbo使用经验，理解SOA、RESTful等架构思想');
+INSERT INTO `recruiter_position_desc` VALUES ('69', ' 熟悉SQL以及性能优化，熟悉Mysql、Oracle，掌握mycat的使用');
+INSERT INTO `recruiter_position_desc` VALUES ('70', '研究过 http 协议、搜索引擎solr或者elasticsearch、缓存redis、序列化、nio，有相应实践经验者优先 ');
+INSERT INTO `recruiter_position_desc` VALUES ('71', '强烈的责任心和良好的团队合作精神，乐于助人，热爱技术，对解决问题有强烈兴趣');
+INSERT INTO `recruiter_position_desc` VALUES ('72', 'c#软件工程师，winform开发；');
+INSERT INTO `recruiter_position_desc` VALUES ('73', '熟练掌握c＃编程技能，熟悉tcp，http，postgresql');
+INSERT INTO `recruiter_position_desc` VALUES ('74', '熟悉gis知识优先');
+INSERT INTO `recruiter_position_desc` VALUES ('75', '安防项目的支持和管理，产品培训，疑难问题的排查和解决；');
+INSERT INTO `recruiter_position_desc` VALUES ('76', '熟练掌握网页开发软件：熟练使用Photoshop等专业软件；');
+INSERT INTO `recruiter_position_desc` VALUES ('77', '责任感强，有一定沟通能力和学习能力');
+INSERT INTO `recruiter_position_desc` VALUES ('78', '能够协助资深设计师完成相关作品');
+INSERT INTO `recruiter_position_desc` VALUES ('79', '负责协调解决企业客户使用网站产品中遇到的问题，为客户提供优质服务，防止客户流失；');
+INSERT INTO `recruiter_position_desc` VALUES ('80', '维护企业客户，并不断提供适合于客户的网络营销产品；');
+INSERT INTO `recruiter_position_desc` VALUES ('81', '全日制统招本科及以上学历，1年以上销售/客服经验，有互联网行业从业经验者优先');
+INSERT INTO `recruiter_position_desc` VALUES ('82', '具备扎实的JAVA基本功、数据结构与算法，熟练应用设计模式，有系统设计、重构、性能优化经验者优先考虑；');
+INSERT INTO `recruiter_position_desc` VALUES ('83', '熟练Spring，Mybatis等行业内常用开源框架，熟练运用WEB相关开发技术；');
+INSERT INTO `recruiter_position_desc` VALUES ('84', '熟练使用Html、CSS、Javascript等常用前端技术及框架；');
+INSERT INTO `recruiter_position_desc` VALUES ('85', '熟练使用MYSQL数据库，对SQL有较强的优化能力；熟悉常用的NOSQL数据库');
+INSERT INTO `recruiter_position_desc` VALUES ('86', '具备扎实的JAVA基本功、数据结构与算法，熟练应用设计模式，有系统设计、重构、性能优化经验者优先考虑；');
+INSERT INTO `recruiter_position_desc` VALUES ('87', '熟练Spring，Mybatis等行业内常用开源框架，熟练运用WEB相关开发技术；');
+INSERT INTO `recruiter_position_desc` VALUES ('88', '熟练使用Html、CSS、Javascript等常用前端技术及框架；');
+INSERT INTO `recruiter_position_desc` VALUES ('89', '熟练使用MYSQL数据库，对SQL有较强的优化能力；熟悉常用的NOSQL数据库');
+INSERT INTO `recruiter_position_desc` VALUES ('90', '负责公司仓储业务、配送业务、安维业务的系统规划和产品方案设计；');
+INSERT INTO `recruiter_position_desc` VALUES ('91', '研究和管理来自用户和公司内部的仓储产品需求，完成需求调研和分析，推进产品功能改进；');
+INSERT INTO `recruiter_position_desc` VALUES ('92', '保障项目及时、优质的上线，涉及设计、开发、测试、验收、培训等各个环节；');
+INSERT INTO `recruiter_position_desc` VALUES ('93', '与其他产品、技术团队合作，在产品和技术上为仓储提交率和成功率负责');
+INSERT INTO `recruiter_position_desc` VALUES ('94', '2~5年以上Java开发经验，至少完整参与过两个以上的中大型软件项目的模块设计和代码开发；');
+INSERT INTO `recruiter_position_desc` VALUES ('95', '精通Java面向对象编程思想；');
+INSERT INTO `recruiter_position_desc` VALUES ('96', '熟悉J2EE体系架构，能够熟练运用Struts、Spring、Hibernate、Ajax、SOA 、JBPM、xml等相关工具或技术；');
+INSERT INTO `recruiter_position_desc` VALUES ('97', '熟悉Sql语言，熟悉各种主流关系型数据库（oracle、sqlserver、mysql等）；');
+INSERT INTO `recruiter_position_desc` VALUES ('98', '熟练使用javascript、Ajax、JQuery等前台框架；熟悉Unix/Windows平台；');
+INSERT INTO `recruiter_position_desc` VALUES ('99', '计算机相关专业背景，1-3年以上Android平台开发经验；');
+INSERT INTO `recruiter_position_desc` VALUES ('100', '具备良好的架构能力，能独立开发Android应用；');
+INSERT INTO `recruiter_position_desc` VALUES ('101', '熟悉Android开发技术，包括UI、布局、通信机制、多线程、JSON、XML等，良好的编程习惯，有较强独立解决问题的能力；');
+INSERT INTO `recruiter_position_desc` VALUES ('102', '熟悉Sql语言，熟悉各种主流关系型数据库（oracle、sqlserver、mysql等）；');
+INSERT INTO `recruiter_position_desc` VALUES ('103', '执行力强，善于学习，具有较强的分析与解决问题能力，富有责任心和团队协作精神，具有良好抗压能力；');
+INSERT INTO `recruiter_position_desc` VALUES ('104', '大专以上学历，应往届计算机专业毕业生，对编程感兴趣，有意向在北京发展；');
+INSERT INTO `recruiter_position_desc` VALUES ('105', '计算机(网络)、软件工程、电子技术、自动化、电子商务、应用数学等相关专业；');
+INSERT INTO `recruiter_position_desc` VALUES ('106', '有计算机语言基础，如：JAVA、.C语言、C++、C#、Net、Android等；');
+INSERT INTO `recruiter_position_desc` VALUES ('107', '有钻研精神和学习能力，团队合作能力；');
+INSERT INTO `recruiter_position_desc` VALUES ('108', '具有良好的技术/业务的学习能力，能够通过学习解决技术问题；');
+INSERT INTO `recruiter_position_desc` VALUES ('109', '本科以上学历，应往届计算机专业毕业生，对编程感兴趣，有意向在北京发展；');
+INSERT INTO `recruiter_position_desc` VALUES ('110', '计算机(网络)、软件工程、电子技术、自动化、电子商务、应用数学等相关专业；');
+INSERT INTO `recruiter_position_desc` VALUES ('111', '有计算机语言基础，如：JAVA、.C语言、C++、C#、Net、Android等；');
+INSERT INTO `recruiter_position_desc` VALUES ('112', '有钻研精神和学习能力，团队合作能力；');
+INSERT INTO `recruiter_position_desc` VALUES ('113', '具有良好的技术/业务的学习能力，能够通过学习解决技术问题；');
+INSERT INTO `recruiter_position_desc` VALUES ('114', '计算机相关专业；');
+INSERT INTO `recruiter_position_desc` VALUES ('115', '熟悉Windows、Linux操作系统的维护操作；');
+INSERT INTO `recruiter_position_desc` VALUES ('116', '了解Java，或C/C++语言及相关开发工具；');
+INSERT INTO `recruiter_position_desc` VALUES ('117', '人品端正，能吃苦耐劳、踏实工作；');
+INSERT INTO `recruiter_position_desc` VALUES ('118', '具有较强的团队合作精神,责任心强；');
+INSERT INTO `recruiter_position_desc` VALUES ('119', '应、往届生不限，理科生优先，有点计算机程序语言基础的优先，喜欢玩网站和程序代码的优先；');
+INSERT INTO `recruiter_position_desc` VALUES ('120', '有足够项目经验者面试通过即可入职；');
+INSERT INTO `recruiter_position_desc` VALUES ('121', '了解Java，或C/C++语言及相关开发工具；');
+INSERT INTO `recruiter_position_desc` VALUES ('122', '人品端正，能吃苦耐劳、踏实工作；');
+INSERT INTO `recruiter_position_desc` VALUES ('123', '具有较强的团队合作精神,责任心强；');
+INSERT INTO `recruiter_position_desc` VALUES ('124', '应、往届生不限，理科生优先，有点计算机程序语言基础的优先，喜欢玩网站和程序代码的优先；');
+INSERT INTO `recruiter_position_desc` VALUES ('125', '有足够项目经验者面试通过即可入职；');
+INSERT INTO `recruiter_position_desc` VALUES ('126', '了解web，java或C/C++语言及相关开发工具；');
+INSERT INTO `recruiter_position_desc` VALUES ('127', '人品端正，能吃苦耐劳、踏实工作；');
+INSERT INTO `recruiter_position_desc` VALUES ('128', '具有较强的团队合作精神,责任心强；');
+INSERT INTO `recruiter_position_desc` VALUES ('129', '应往届毕业生，有志于在IT行业发展；');
+INSERT INTO `recruiter_position_desc` VALUES ('130', '计算机（网络）、电子信息、软件工程、（电气）自动化、测控、生仪、机电、数学、物理、机电等专业；');
+INSERT INTO `recruiter_position_desc` VALUES ('131', '有计算机语言者优先，如：C语言、C++、java、.Net等接受岗前培训，并愿意在北京工作一年以上，一年后可申请到当地分支机构合作企业工作；');
+INSERT INTO `recruiter_position_desc` VALUES ('132', '人品端正，能吃苦耐劳、踏实工作；');
+INSERT INTO `recruiter_position_desc` VALUES ('133', '具有较强的团队合作精神,责任心强；');
+INSERT INTO `recruiter_position_desc` VALUES ('134', '负责云计算平台整体架构设计，建设规划；');
+INSERT INTO `recruiter_position_desc` VALUES ('135', '云计算相关技术跟进及云计算项目跟进；');
+INSERT INTO `recruiter_position_desc` VALUES ('136', '负责云计算平台整体架构设计方案编写与技术交流；');
+INSERT INTO `recruiter_position_desc` VALUES ('137', '云计算项目实施与运维，以及云计算项目客户培训；');
+INSERT INTO `recruiter_position_desc` VALUES ('138', '熟悉主流操作系统，数据库配置与维护；');
+INSERT INTO `recruiter_position_desc` VALUES ('139', '大专以上学历，应/往届毕业生，有志于在IT行业发展；');
+INSERT INTO `recruiter_position_desc` VALUES ('140', '专业不符、计算机理论知识和IT项目经验不足的情况，公司会提供零基础岗前实训，享受企业补助计划，学习期间不用支付任何费用（表现优异奖励3000-8000元）；');
+INSERT INTO `recruiter_position_desc` VALUES ('141', '理工科专业包括：计算机（网络)、电子信息、软件工程、（电气）自动化、测控、生仪、机电等；');
+INSERT INTO `recruiter_position_desc` VALUES ('142', '国家统招本科以上学历,通过国家英语四级等级考试，具备Java web、数据库开发基础者优先；');
+INSERT INTO `recruiter_position_desc` VALUES ('143', '熟悉主流操作系统，数据库配置与维护；');
+INSERT INTO `recruiter_position_desc` VALUES ('144', '五年以上JAVA应用开发经验，JAVA基础扎实，熟悉io、多线程、集合、nio等基础；');
+INSERT INTO `recruiter_position_desc` VALUES ('145', '熟练掌握Spring、SpringMVC、SpringBoot等，熟悉常见的服务治理框架dubbo、motan，熟练使用缓存组件redis以及消息队列kafka；');
+INSERT INTO `recruiter_position_desc` VALUES ('146', '熟练使用Mysql，熟悉数据库设计规范，了解大数据量下数据库的性能优化；');
+INSERT INTO `recruiter_position_desc` VALUES ('147', '熟悉分布式和大数据环境下相关组件优先，如zookeeper、flume、hadoop/hdfs、hbase');
+INSERT INTO `recruiter_position_desc` VALUES ('148', '具有较强的抽象设计能力，思路清晰，善于思考，能独立分析和解决复杂问题');
+INSERT INTO `recruiter_position_desc` VALUES ('149', '有大型分布式、高并发、高负载、高可用系统设计、开发和调优经验');
+INSERT INTO `recruiter_position_desc` VALUES ('150', '有丰富的互联网及移动互联网项目开发、管理经验和深厚的软件技术功底；');
+INSERT INTO `recruiter_position_desc` VALUES ('151', '精通面向对象设计、设计模式和相关开发语言，熟悉mysql数据库开发，具备大数据架构管理经验；');
+INSERT INTO `recruiter_position_desc` VALUES ('152', '精通HTML、XML、css、PHP、Java、C++、JavaScript、AJAX、MySQL，熟悉Linux系统和Mysql数据库的管理；');
+INSERT INTO `recruiter_position_desc` VALUES ('153', '平台开发与大数据项目管理经验优先');
+INSERT INTO `recruiter_position_desc` VALUES ('154', '有很强的沟通表达能力和团队合作精神、具有创业激情，能承受一定工作压力者优先');
+INSERT INTO `recruiter_position_desc` VALUES ('155', '组织研究行业最新产品的技术发展方向，主持制定技术发展战略规划');
+INSERT INTO `recruiter_position_desc` VALUES ('156', '熟悉常见数据结构和算法设计，逻辑分析能力强；');
+INSERT INTO `recruiter_position_desc` VALUES ('157', '熟练使用C++、Windows/Linux系统API和socket，多线程；');
+INSERT INTO `recruiter_position_desc` VALUES ('158', '熟悉mysql、sqlite等常用数据库的使用；');
+INSERT INTO `recruiter_position_desc` VALUES ('159', '了解C/S架构,thrift,restful');
+INSERT INTO `recruiter_position_desc` VALUES ('160', '良好的沟通能力，善于合作，有责任心，有产品意识');
+INSERT INTO `recruiter_position_desc` VALUES ('161', '了解C/S架构,thrift,restful');
+INSERT INTO `recruiter_position_desc` VALUES ('162', '具有电子、计算机、通讯、自动化等相关专业本科以上学历；');
+INSERT INTO `recruiter_position_desc` VALUES ('163', '具有2年以上嵌入式软件开发经验, 尤其是海思IPC平台经验 (Hi3516/3518 系列SoC)；');
+INSERT INTO `recruiter_position_desc` VALUES ('164', '精通 C/C++、精通 ARM 架构下的嵌入式 Linux 软件开发和 TCP/IP 网络编程；');
+INSERT INTO `recruiter_position_desc` VALUES ('165', '精通嵌入式Linux系统内核、驱动编程和多种硬件平台下的移植；');
+INSERT INTO `recruiter_position_desc` VALUES ('166', '能够熟练阅读英文技术资料并进行设计文档编写；');
+INSERT INTO `recruiter_position_desc` VALUES ('167', '良好的团队协作精神和责任心，能够承受工作压力');
+INSERT INTO `recruiter_position_desc` VALUES ('168', '具有解决实际场景问题的当下行动力；');
+INSERT INTO `recruiter_position_desc` VALUES ('169', '踏实、认真、负责，有积极的自我驱动性；');
+INSERT INTO `recruiter_position_desc` VALUES ('170', '熟练掌握C/C++, CUDA, 具有良好代码风格；');
+INSERT INTO `recruiter_position_desc` VALUES ('171', '熟悉最新的GPU优化工具库cuDNN, TensorRT，DeepStream等；');
+INSERT INTO `recruiter_position_desc` VALUES ('172', '使用过Theano/Caffe/Tensorflow等开源深度学习框架优先；');
+INSERT INTO `recruiter_position_desc` VALUES ('173', '负责协助工程师进行软件系统Java开发、调试工作');
+INSERT INTO `recruiter_position_desc` VALUES ('174', '职位描述2');
+INSERT INTO `recruiter_position_desc` VALUES ('175', '职位描述3');
+INSERT INTO `recruiter_position_desc` VALUES ('176', '职位描述4');
+INSERT INTO `recruiter_position_desc` VALUES ('177', '职位描述5');
+
+-- ----------------------------
+-- Table structure for recruiter_position_recruiter_position_descs
+-- ----------------------------
+DROP TABLE IF EXISTS `recruiter_position_recruiter_position_descs`;
+CREATE TABLE `recruiter_position_recruiter_position_descs` (
+  `recruiter_position_id` int(11) NOT NULL,
+  `recruiter_position_descs_id` int(11) NOT NULL,
+  UNIQUE KEY `UK_bvvxormuvg0w04stxmieruig1` (`recruiter_position_descs_id`),
+  KEY `FKb9uq7qb91n36nuk6vebxh3ed9` (`recruiter_position_id`),
+  CONSTRAINT `FKb9uq7qb91n36nuk6vebxh3ed9` FOREIGN KEY (`recruiter_position_id`) REFERENCES `recruiter_position` (`id`),
+  CONSTRAINT `FKl9m5v9yh9q0ryc4kiqtiqln3y` FOREIGN KEY (`recruiter_position_descs_id`) REFERENCES `recruiter_position_desc` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of recruiter_position_recruiter_position_descs
+-- ----------------------------
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('1', '1');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('1', '2');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('1', '3');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('1', '4');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('1', '5');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('2', '6');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('2', '7');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('2', '8');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('2', '9');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('2', '10');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('3', '11');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('3', '12');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('3', '13');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('3', '14');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('4', '15');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('4', '16');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('4', '17');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('4', '18');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('5', '19');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('5', '20');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('5', '21');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('5', '22');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('5', '23');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('6', '24');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('6', '25');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('6', '26');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('6', '27');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('6', '28');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('7', '29');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('7', '30');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('7', '31');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('7', '32');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('7', '33');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('8', '34');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('8', '35');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('8', '36');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('8', '37');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('8', '38');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('9', '39');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('9', '40');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('9', '41');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('9', '42');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('9', '43');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('9', '44');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('10', '45');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('10', '46');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('10', '47');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('10', '48');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('10', '49');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('10', '50');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('11', '51');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('11', '52');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('11', '53');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('11', '54');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('11', '55');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('11', '56');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('11', '57');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('12', '58');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('12', '59');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('12', '60');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('12', '61');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('12', '62');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('12', '63');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('12', '64');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('13', '65');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('13', '66');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('13', '67');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('13', '68');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('13', '69');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('13', '70');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('13', '71');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('14', '72');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('14', '73');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('14', '74');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('15', '75');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('16', '76');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('16', '77');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('16', '78');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('17', '79');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('17', '80');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('17', '81');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('18', '82');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('18', '83');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('18', '84');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('18', '85');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('19', '86');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('19', '87');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('19', '88');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('19', '89');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('20', '90');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('20', '91');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('20', '92');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('20', '93');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('21', '94');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('21', '95');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('21', '96');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('21', '97');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('21', '98');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('22', '99');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('22', '100');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('22', '101');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('22', '102');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('22', '103');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('23', '104');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('23', '105');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('23', '106');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('23', '107');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('23', '108');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('24', '109');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('24', '110');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('24', '111');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('24', '112');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('24', '113');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('25', '114');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('25', '115');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('25', '116');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('25', '117');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('25', '118');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('26', '119');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('26', '120');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('26', '121');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('26', '122');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('26', '123');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('27', '124');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('27', '125');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('27', '126');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('27', '127');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('27', '128');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('28', '129');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('28', '130');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('28', '131');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('28', '132');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('28', '133');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('29', '134');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('29', '135');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('29', '136');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('29', '137');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('29', '138');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('30', '139');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('30', '140');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('30', '141');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('30', '142');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('30', '143');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('31', '144');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('31', '145');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('31', '146');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('31', '147');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('31', '148');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('31', '149');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('32', '150');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('32', '151');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('32', '152');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('32', '153');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('32', '154');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('32', '155');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('33', '156');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('33', '157');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('33', '158');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('33', '159');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('33', '160');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('33', '161');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('34', '162');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('34', '163');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('34', '164');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('34', '165');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('34', '166');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('34', '167');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('35', '168');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('35', '169');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('35', '170');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('35', '171');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('35', '172');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('36', '173');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('36', '174');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('36', '175');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('36', '176');
+INSERT INTO `recruiter_position_recruiter_position_descs` VALUES ('36', '177');
